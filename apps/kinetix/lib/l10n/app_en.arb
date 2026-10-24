@@ -257,5 +257,22 @@
   "limitedEdition": "LIMITED EDITION",
   "@limitedEdition": {
     "description": "Badge for limited edition products"
+  },
+
+  "sortBy": "Sort",
+  "@sortBy": {
+    "description": "Tooltip of the button that changes the catalog order"
+  },
+  "sortRelevance": "Relevance",
+  "@sortRelevance": {
+    "description": "Catalog order: as returned by the store"
+  },
+  "sortPriceLowToHigh": "Price: low to high",
+  "@sortPriceLowToHigh": {
+    "description": "Catalog order: cheapest first"
+  },
+  "sortPriceHighToLow": "Price: high to low",
+  "@sortPriceHighToLow": {
+    "description": "Catalog order: most expensive first"
   }
 }

@@ -71,5 +71,10 @@
   "wishlist": "Favoritos",
   "noFavorites": "No tienes productos en favoritos aún",
   "newRelease": "NUEVO",
-  "limitedEdition": "EDICIÓN LIMITADA"
+  "limitedEdition": "EDICIÓN LIMITADA",
+
+  "sortBy": "Ordenar",
+  "sortRelevance": "Relevancia",
+  "sortPriceLowToHigh": "Precio: menor a mayor",
+  "sortPriceHighToLow": "Precio: mayor a menor"
 }

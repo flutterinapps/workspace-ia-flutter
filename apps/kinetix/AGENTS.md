@@ -28,6 +28,7 @@ están en el `AGENTS.md` raíz y en `.agents/rules/`; aquí solo lo propio.
 | Feature | Estado | Archivos clave |
 |---|---|---|
 | Catálogo + búsqueda + categorías | hecho | `catalog_provider.dart`, `catalog_home_screen.dart` |
+| Orden por precio | hecho | `catalog_provider.dart` (`selectSort`), spec: `docs/ai/specs/kinetix-sort-by-price.md` |
 | Detalle de producto con tallas | hecho | `product_detail_screen.dart` |
 | Carrito + cupones | hecho | `cart_provider.dart`, `shopping_cart_screen.dart` |
 | Checkout (Apple/Google Pay, tarjeta) | hecho | `checkout_provider.dart`, `checkout_payment_screen.dart` |
