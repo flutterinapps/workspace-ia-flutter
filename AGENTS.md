@@ -16,6 +16,8 @@ Gemini CLI, Antigravity, Codex, Cursor, Copilot). Este archivo es la **fuente
 | `.agents/workflows/` | Flujos repetibles (`new-feature`). |
 | `design/` | Fuentes de diseño por app (`sources.md`). Cada app guarda `design/tokens.json`, `components.md` y `screens.md`. |
 | `docs/ai/specs/` | Specs de features: se escriben antes del código. |
+| `docs/ai/adaptar-el-workspace.md` | Cómo adaptar el workspace a un proyecto y mejorarlo con lo nuevo. |
+| `docs/ai/origen-de-los-recursos.md` | De dónde viene cada regla, skill, agente y MCP. |
 | `tool/` | `setup_ai.sh`, `new_app.sh`, `index_apps.sh`. |
 
 ## Cómo extender el workspace

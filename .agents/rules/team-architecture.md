@@ -45,12 +45,22 @@ Flujo obligatorio: `Widget -> Provider -> Repository (abstract) -> RepositoryImp
 - Layout por restricciones (`Flex`, `Expanded`, `LayoutBuilder`), nunca tamaños
   fijos de pantalla.
 
-## Perfil alternativo: Bloc
+## Perfiles: cada app elige el suyo
 
-Solo si la app ya usa `flutter_bloc` (lo dice su `AGENTS.md`):
-`presentation/bloc/{feature}_bloc.dart`, `_event.dart`, `_state.dart`.
+Este archivo describe el **perfil por defecto**. Cada app declara en su
+`AGENTS.md` qué perfil usa, y el agente lo respeta (no migra una app a otro
+perfil sin que se lo pidan):
 
-## Equivalencias con `flutter-apply-architecture-best-practices`
+| Perfil | Cuándo | Estructura |
+|---|---|---|
+| **Capas** (por defecto) | Apps nuevas sin preferencia | La de este archivo: `domain/ data/ presentation/` |
+| **MVVM oficial** | El cliente o el proyecto sigue la guía de Flutter | Tal cual `flutter-apply-architecture-best-practices`: `ui/features/<f>/{view_models,views}`, `data/{services,repositories}`, `domain/` |
+| **Bloc** | La app ya usa `flutter_bloc` | `presentation/bloc/{feature}_bloc.dart`, `_event.dart`, `_state.dart` |
+
+En todos los perfiles aplican igual: estados explícitos, nada de lógica en
+`build()`, `dispose()`, tests con `checks`, `@Preview`, l10n y accesibilidad.
+
+## Equivalencias con `flutter-apply-architecture-best-practices` (perfil Capas)
 
 La skill oficial y este estándar coinciden en lo esencial (capas separadas,
 `ChangeNotifier`, repositorio como fuente única, inyección por constructor,

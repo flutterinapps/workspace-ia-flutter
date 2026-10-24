@@ -117,6 +117,11 @@ certificación de caja negra): ver [`docs/ai/testing-lanes.md`](docs/ai/testing-
   (quitamos 2 que no aplican a apps: CLI y compilación de C/C++; ver `.agents/skills-exclude.txt`).
   Actualizar: `tool/setup_ai.sh --update` y revisar `git diff`.
 
+## Adaptarlo y saber de dónde viene cada cosa
+
+- [Adaptar y mejorar el workspace](docs/ai/adaptar-el-workspace.md)
+- [De dónde viene cada recurso](docs/ai/origen-de-los-recursos.md)
+
 ## Créditos
 
 Reglas `flutter-*` y skills oficiales: [flutter/agent-plugins](https://github.com/flutter/agent-plugins)

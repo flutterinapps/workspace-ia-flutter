@@ -5,6 +5,7 @@ están en el `AGENTS.md` raíz y en `.agents/rules/`; aquí solo lo propio.
 
 ## Stack
 
+- Perfil de arquitectura: **Capas** (`team-architecture.md`).
 - Estado: `provider` (`ChangeNotifier` + `MultiProvider` en `lib/main.dart`).
 - Inyección: repositorios creados en `main.dart` y pasados por constructor.
 - Datos: datasources **mock** en `lib/data/datasources/` (sin backend todavía).

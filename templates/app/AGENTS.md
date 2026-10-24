@@ -7,7 +7,8 @@ solo lo que hace distinta a esta app.
 
 ## Stack
 
-- Estado: `provider` (ver `team-architecture.md`).
+- Perfil de arquitectura: **Capas** (ver `team-architecture.md`; alternativas: MVVM oficial, Bloc).
+- Estado: `provider`.
 - l10n: EN/ES en `lib/l10n/`.
 - Tests: `package:checks`.
 
