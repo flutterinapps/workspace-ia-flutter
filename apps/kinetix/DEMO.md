@@ -26,7 +26,7 @@ En la raíz del workspace: `claude`
 Escribe la pregunta completa. Solo "¿qué aprendiste?" se entiende como "¿qué
 recuerdas de sesiones anteriores?" y la IA responde que no tiene memoria.
 
-Qué señalar: las 8 reglas de siempre (no las 16), las skills solo por nombre,
+Qué señalar: las 9 reglas de siempre (no las 18), las skills solo por nombre,
 los 4 agentes, el MCP `dart`. *"Esto no lo escribí en el prompt: lo trae el
 espacio de trabajo."*
 

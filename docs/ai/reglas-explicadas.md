@@ -19,6 +19,7 @@ Quién gana si dos reglas chocan: el `AGENTS.md` de la app → las reglas `team-
 | `team-architecture` | Escrita para este workspace a partir del estándar de arquitectura de Lesly (capas + Provider) | Siempre | Capas, estados explícitos, nada de lógica en `build()`, y los perfiles por app (Capas, MVVM oficial, Bloc) |
 | `team-design-system` | Escrita para este workspace | Siempre | La IA no inventa colores ni tamaños: salen del theme y de `design/tokens.json` |
 | `team-a11y-inclusion` | Escrita para este workspace, inspirada en la charla de Flutteristas sobre inclusión | Siempre | Botones de 48 dp, etiquetas para lectores de pantalla, contraste, formularios que aceptan cualquier nombre, textos traducidos |
+| `team-usage-report` | Escrita para este workspace a pedido de Lesly | Siempre | Al final de cada trabajo, la IA lista qué reglas bajo demanda, skills, agentes, herramientas y comandos usó, o dice que no usó ninguno |
 | `team-ai-features-security` | Escrita para este workspace, inspirada en la charla de Firebase AI Logic + App Check | Bajo demanda | Nunca poner claves de IA en la app; App Check y límites por usuario |
 | `team-knowledge-sources` | Escrita para este workspace | Bajo demanda | Qué fuente consultar: docs oficiales, pub.dev, skills o flutter-radar |
 | `flutter-code-quality` | Oficial de Flutter ([AI rules](https://docs.flutter.dev/ai/ai-rules)) | Siempre | Nombres claros, funciones cortas, manejar errores, líneas de 80 caracteres |

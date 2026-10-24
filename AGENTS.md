@@ -54,6 +54,7 @@ Lee y cumple estos archivos al empezar cualquier tarea:
 - `.agents/rules/team-architecture.md` — capas, estado y widgets.
 - `.agents/rules/team-design-system.md` — nada de diseño hardcodeado.
 - `.agents/rules/team-a11y-inclusion.md` — accesibilidad e inclusión.
+- `.agents/rules/team-usage-report.md` — al final de cada trabajo, di qué skills, agentes y herramientas usaste.
 - `.agents/rules/flutter-code-quality.md`, `flutter-dart-flutter-best-practices.md`,
   `flutter-testing.md`, `flutter-hot-reload.md` — AI rules oficiales.
 
