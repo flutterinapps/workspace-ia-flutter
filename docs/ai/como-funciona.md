@@ -52,6 +52,6 @@ En una frase: **el modelo piensa, el arnés hace y tu carpeta decide cómo.**
 
 | Paso | Cómo verlo |
 |---|---|
-| 1 | Pregunta al agente: "¿qué reglas, skills, agentes y herramientas MCP tienes cargados?" |
+| 1 | Pregunta al agente: "¿qué reglas, skills, agentes y herramientas MCP cargaste de esta carpeta?" |
 | 3–4 | Pide "analiza apps/kinetix con analyze_files": verás la llamada a la herramienta y su resultado |
 | 5 | Pide un cambio en un `.dart` con un error a propósito: el hook lo detecta y el agente lo corrige |

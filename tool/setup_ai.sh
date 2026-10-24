@@ -129,7 +129,7 @@ cat <<MSG
 
 Listo. Abre tu agente en: $root
   claude   |  gemini   |  agy   |  codex
-Pregúntale: "¿Qué reglas, skills, agentes y herramientas MCP tienes cargados?"
+Pregúntale: "¿Qué reglas, skills, agentes y herramientas MCP cargaste de esta carpeta?"
 Stitch necesita STITCH_API_KEY y Developer Knowledge GOOGLE_DK_API_KEY; Figma pide login la primera vez.
 Para que el agente maneje la app: flutter run y pásale el URI del VM service.
 MSG

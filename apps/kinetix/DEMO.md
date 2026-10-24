@@ -11,17 +11,20 @@ cd apps/kinetix && flutter precache --ios && flutter build ios --simulator
 open -a Simulator && flutter run      # deja la app abierta
 ```
 
-- [ ] `claude` abre sin pedir login. `gemini` con sesión iniciada
+- [ ] `claude` abre sin pedir login y sin errores de MCP (si sale el de GitHub, apágalo con `/mcp`). `gemini` con sesión iniciada
       (`GOOGLE_CLOUD_PROJECT` exportado) si lo vas a mostrar.
 - [ ] Modo avión probado: todo lo de abajo salvo el modelo funciona offline.
 - [ ] Ramas: `git branch` muestra `step-0-workspace`, `step-1-domain`,
       `step-2-ui`, `final`.
 
-## 1. "¿Qué cargaste?" (3 min)
+## 1. "¿Qué aprendiste?" (3 min)
 
 En la raíz del workspace: `claude`
 
-> ¿Qué reglas, skills, agentes y herramientas MCP tienes cargados?
+> ¿Qué reglas, skills, agentes y herramientas MCP cargaste de esta carpeta?
+
+Escribe la pregunta completa. Solo "¿qué aprendiste?" se entiende como "¿qué
+recuerdas de sesiones anteriores?" y la IA responde que no tiene memoria.
 
 Qué señalar: las 8 reglas de siempre (no las 16), las skills solo por nombre,
 los 4 agentes, el MCP `dart`. *"Esto no lo escribí en el prompt: lo trae el

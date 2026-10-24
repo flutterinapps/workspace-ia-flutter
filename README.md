@@ -22,7 +22,7 @@ uniones de carpetas (no pide administrador) y repara los enlaces que Git para
 Windows deja como archivos de texto. También funciona en WSL.
 
 Primera pregunta al agente: *"¿Qué reglas, skills, agentes y herramientas MCP
-tienes cargados?"*
+cargaste de esta carpeta?"*
 
 Requisitos: Flutter 3.38+ (Dart ≥ 3.9 para el Dart MCP server). Opcional:
 `STITCH_API_KEY` para Stitch. Figma en Claude Code viene con su plugin oficial:

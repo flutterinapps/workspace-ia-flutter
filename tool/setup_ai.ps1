@@ -73,4 +73,4 @@ if (Get-Command uv -ErrorAction SilentlyContinue) {
 Write-Host ''
 Write-Host "Listo. Abre tu agente en: $root"
 Write-Host '  claude   |  gemini   |  agy   |  codex'
-Write-Host 'Pregúntale: "¿Qué reglas, skills, agentes y herramientas MCP tienes cargados?"'
+Write-Host 'Pregúntale: "¿Qué reglas, skills, agentes y herramientas MCP cargaste de esta carpeta?"'

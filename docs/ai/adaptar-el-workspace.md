@@ -57,6 +57,6 @@ Anota de dónde salió la idea (URL del video o post) en el propio archivo y en
 ## 4. Comprobar que el cambio funciona
 
 1. Abre el agente en la raíz y pregunta: "¿qué reglas, skills, agentes y MCP
-   tienes cargados?".
+   cargaste de esta carpeta?".
 2. Pídele una tarea que use lo nuevo y revisa que lo aplique.
 3. `flutter analyze` y `flutter test` en la app de prueba.
