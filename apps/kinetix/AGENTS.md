@@ -10,7 +10,7 @@ están en el `AGENTS.md` raíz y en `.agents/rules/`; aquí solo lo propio.
 - Inyección: repositorios creados en `main.dart` y pasados por constructor.
 - Datos: datasources **mock** en `lib/data/datasources/` (sin backend todavía).
 - Navegación: rutas con nombre en `MaterialApp.routes` (`/`, `/cart`,
-  `/checkout`, `/processing`, `/confirmation`). No migrar a go_router sin pedirlo.
+  `/checkout`, `/processing`, `/confirmation`, `/wishlist`). No migrar a go_router sin pedirlo.
 - l10n: `lib/l10n/app_en.arb` / `app_es.arb` -> `lib/l10n/generated/`
   (`flutter gen-l10n`). Idioma conmutable con `LocaleProvider`.
 - Fuentes: Montserrat (titulares) e Inter (texto) vía `google_fonts`.
@@ -31,7 +31,7 @@ están en el `AGENTS.md` raíz y en `.agents/rules/`; aquí solo lo propio.
 | Detalle de producto con tallas | hecho | `product_detail_screen.dart` |
 | Carrito + cupones | hecho | `cart_provider.dart`, `shopping_cart_screen.dart` |
 | Checkout (Apple/Google Pay, tarjeta) | hecho | `checkout_provider.dart`, `checkout_payment_screen.dart` |
-| Wishlist | **pendiente**: hay `WishlistProvider` en memoria, sin pantalla, repositorio ni estados | spec: `docs/ai/specs/kinetix-wishlist.md` |
+| Wishlist (estados sellados, optimista con rollback) | hecho | `wishlist_provider.dart`, `wishlist_screen.dart`, spec `docs/ai/specs/kinetix-wishlist.md` |
 
 ## Deuda conocida
 
