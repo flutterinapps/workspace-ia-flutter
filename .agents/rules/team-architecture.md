@@ -76,6 +76,6 @@ casos de uso solo si hacen falta). Cuando la uses, traduce así:
 | Estado con `isLoading` y campos nulos | `sealed class` `Loading/Empty/Data/Error` con `switch` exhaustivo |
 | `try/finally` sin capturar el error | Todo error termina en un estado `Error` visible con acción |
 | Modelos con `freezed` o `built_value` | Clases inmutables con `equatable`; no se añade generación de código sin decidirlo |
-| `ListenableBuilder` con el ViewModel por constructor | `context.watch`/`select` con `MultiProvider`; la vista pura recibe estado y callbacks (ver `WishlistView` en la rama `final`) |
+| `ListenableBuilder` con el ViewModel por constructor | `context.watch`/`select` con `MultiProvider`; la vista pura recibe estado y callbacks (ver `WishlistView` en la rama `favoritos-3-con-errores`) |
 | Paso 8: tests del ViewModel y repositorio | Lo mismo **más** widget test, `@Preview` y `package:checks` |
 

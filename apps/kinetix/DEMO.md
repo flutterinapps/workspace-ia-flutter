@@ -1,6 +1,6 @@
 # Guion de la demo — Kinetix
 
-Rama de partida: `main` (= `step-0-workspace`). Simulador iOS abierto y
+Rama de partida: `main`. Simulador iOS abierto y
 `flutter run` corriendo en `apps/kinetix` **antes** de empezar.
 
 ## 0. Preparación (la noche anterior)
@@ -14,8 +14,8 @@ open -a Simulator && flutter run      # deja la app abierta
 - [ ] `claude` abre sin pedir login y sin errores de MCP (si sale el de GitHub, apágalo con `/mcp`). `gemini` con sesión iniciada
       (`GOOGLE_CLOUD_PROJECT` exportado) si lo vas a mostrar.
 - [ ] Modo avión probado: todo lo de abajo salvo el modelo funciona offline.
-- [ ] Ramas: `git branch` muestra `step-0-workspace`, `step-1-domain`,
-      `step-2-ui`, `final`.
+- [ ] Ramas: `git branch -a` muestra `vistos-1-plan-y-datos`, `vistos-2-pantalla`,
+      `vistos-3-terminado`, `precio-terminado` y `favoritos-3-con-errores`.
 
 ## 1. "¿Qué aprendiste?" (3 min)
 
@@ -37,14 +37,14 @@ Elige la ruta según los créditos de IA:
 - **Con créditos — Vistos recientemente** (flujo completo):
   > /new-feature kinetix recently-viewed "fila de productos vistos recientemente en el catálogo: guarda los últimos productos que el usuario abrió y los muestra arriba, con estados de cargando, vacío, datos y error"
 
-  Plan B: ramas `recently-viewed-step-1` → `recently-viewed-step-2` → `recently-viewed-final`.
+  Plan B: ramas `vistos-1-plan-y-datos` → `vistos-2-pantalla` → `vistos-3-terminado`.
 - **Con pocos créditos — Ordenar por precio** (cambio pequeño):
   > /new-feature kinetix sort-by-price "ordenar el catálogo por precio: relevancia, menor a mayor y mayor a menor"
 
-  Plan B: rama `sort-by-price`.
+  Plan B: rama `precio-terminado`.
 
 El agente `flutter-architect` escribe la spec en `docs/ai/specs/`.
-Si la IA menciona la rama `final`: ahí está la Wishlist, un ejemplo con errores reales que
+Si la IA menciona la rama `favoritos-3-con-errores`: ahí está la lista de favoritos, un ejemplo con errores reales que
 la IA encontró al revisarla. Es un buen momento para mostrar que la IA audita código existente.
 Léela en voz alta 20 segundos: estados, contrato, casos borde, criterios.
 Apruébala: *"Aprobada, sigue."*
@@ -86,8 +86,8 @@ hardcodeado en `KinetixProductCard`). *"La IA hace el borrador; el merge es mío
 | Si… | Haz… |
 |---|---|
 | Marionette no conecta | Revisa que el URI termine en `/ws` y que la app sea debug; si no, tócalo tú en el simulador |
-| El modelo tarda o se va por las ramas | `git stash && git checkout recently-viewed-step-1` (o `-step-2`, `-final`; o `sort-by-price`) y luego `flutter pub get` (regenera los textos l10n); explica el diff |
-| No hay red | Muestra `final`: `flutter run`, previews y `flutter test` funcionan offline |
+| El modelo tarda o se va por las ramas | `git stash && git checkout vistos-1-plan-y-datos` (o `vistos-2-pantalla`, `vistos-3-terminado`; o `precio-terminado`) y luego `flutter pub get` (regenera los textos l10n); explica el diff |
+| No hay red | Muestra `vistos-3-terminado`: `flutter run`, previews y `flutter test` funcionan offline |
 | El simulador no arranca | `flutter test` + `flutter widget-preview start` |
 | Falla el MCP | Los mismos pasos con `flutter analyze` y `flutter test` en la terminal |
 

@@ -107,13 +107,13 @@ Elige la ruta según los créditos de IA que tengas:
 
 | Ruta | Comando | Ramas con la solución, paso a paso |
 |---|---|---|
-| **Con créditos: Vistos recientemente** | `/new-feature kinetix recently-viewed` | `recently-viewed-step-1` (spec, contrato y datos) → `recently-viewed-step-2` (estado, provider, fila en el catálogo) → `recently-viewed-final` (previews EN/ES y tests) |
-| **Con pocos créditos: Ordenar por precio** | `/new-feature kinetix sort-by-price` | `sort-by-price` (spec, orden en el catálogo y tests) |
-| **Ejemplo para auditar: Wishlist** | Pide al agente que revise la rama `final` | `step-1-domain` → `step-2-ui` → `final` (tiene errores reales que la IA encontró al revisarla) |
+| **Con créditos: Vistos recientemente** | `/new-feature kinetix recently-viewed` | `vistos-1-plan-y-datos` (spec, contrato y datos) → `vistos-2-pantalla` (estado, provider, fila en el catálogo) → `vistos-3-terminado` (previews EN/ES y tests) |
+| **Con pocos créditos: Ordenar por precio** | `/new-feature kinetix sort-by-price` | `precio-terminado` (spec, orden en el catálogo y tests) |
+| **Ejemplo para auditar: Favoritos** | Pide al agente que revise la rama `favoritos-3-con-errores` | `favoritos-1-datos` → `favoritos-2-pantalla` → `favoritos-3-con-errores` (tiene errores reales que la IA encontró al revisarla) |
 
-`main` (= `step-0-workspace`) es el punto de partida: el workspace y Kinetix sin
-ninguna de estas funciones. Si te quedas atrás: `git checkout <rama>` y
-`flutter pub get` dentro de `apps/kinetix`.
+`main` es el punto de partida: el workspace y Kinetix sin ninguna de estas
+funciones. El número del nombre es el paso de la demo. Si te quedas atrás:
+`git checkout <rama>` y `flutter pub get` dentro de `apps/kinetix`.
 
 ## `package:skills` vs `flutter/agent-plugins` vs `dart-lang/skills`
 
