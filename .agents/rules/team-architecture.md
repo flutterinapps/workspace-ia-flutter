@@ -4,9 +4,10 @@ trigger: always_on
 
 # Arquitectura del equipo (prioridad sobre `flutter-*.md`)
 
-Si una regla `flutter-*.md` contradice este archivo, gana este archivo. Por
-ejemplo: las reglas oficiales prefieren el estado nativo de Flutter; el equipo
-usa `provider` como estándar.
+Si una regla `flutter-*.md` **o una skill oficial** (por ejemplo
+`flutter-apply-architecture-best-practices`) contradice este archivo, gana este
+archivo. Por ejemplo: las reglas oficiales prefieren el estado nativo de
+Flutter; el equipo usa `provider` como estándar.
 
 ## Capas (Clean Architecture)
 
@@ -48,3 +49,23 @@ Flujo obligatorio: `Widget -> Provider -> Repository (abstract) -> RepositoryImp
 
 Solo si la app ya usa `flutter_bloc` (lo dice su `AGENTS.md`):
 `presentation/bloc/{feature}_bloc.dart`, `_event.dart`, `_state.dart`.
+
+## Equivalencias con `flutter-apply-architecture-best-practices`
+
+La skill oficial y este estándar coinciden en lo esencial (capas separadas,
+`ChangeNotifier`, repositorio como fuente única, inyección por constructor,
+casos de uso solo si hacen falta). Cuando la uses, traduce así:
+
+| Skill oficial dice | En este equipo |
+|---|---|
+| `ui/features/<f>/view_models/` y `views/` | `presentation/providers/` y `presentation/screens/` |
+| `ui/core/` | `presentation/widgets/` y `core/theme/` |
+| ViewModel | Provider (`ChangeNotifier`); mismo rol |
+| `data/services/` | `data/datasources/` |
+| Repositorio concreto en `data/repositories/` | Contrato **abstracto** en `domain/repositories/` + implementación en `data/repositories_impl/` |
+| Estado con `isLoading` y campos nulos | `sealed class` `Loading/Empty/Data/Error` con `switch` exhaustivo |
+| `try/finally` sin capturar el error | Todo error termina en un estado `Error` visible con acción |
+| Modelos con `freezed` o `built_value` | Clases inmutables con `equatable`; no se añade generación de código sin decidirlo |
+| `ListenableBuilder` con el ViewModel por constructor | `context.watch`/`select` con `MultiProvider`; la vista pura recibe estado y callbacks (ver `WishlistView` en la rama `final`) |
+| Paso 8: tests del ViewModel y repositorio | Lo mismo **más** widget test, `@Preview` y `package:checks` |
+

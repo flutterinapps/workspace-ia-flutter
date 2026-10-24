@@ -14,7 +14,7 @@ Gemini CLI, Antigravity, Codex, Cursor, Copilot). Este archivo es la **fuente
 | `.agents/skills/` | Skills (formato agentskills.io), se cargan bajo demanda. |
 | `.agents/agents/` | Agentes especializados (contexto aislado). |
 | `.agents/workflows/` | Flujos repetibles (`new-feature`). |
-| `design/` | Fuentes de diseño (Figma, Stitch) y `DESIGN.md` común. |
+| `design/` | Fuentes de diseño por app (`sources.md`). Cada app guarda `design/tokens.json`, `components.md` y `screens.md`. |
 | `docs/ai/specs/` | Specs de features: se escriben antes del código. |
 | `tool/` | `setup_ai.sh`, `new_app.sh`, `index_apps.sh`. |
 

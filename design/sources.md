@@ -7,6 +7,10 @@
 Para Figma, anota el `fileKey` y los `node-id` de las pantallas clave:
 `https://figma.com/design/<fileKey>/<nombre>?node-id=<nodeId>`.
 
-Flujo: Stitch (explorar y generar pantallas) -> Figma (fuente de verdad del
-design system, opcional) -> skill `sync-design-tokens` -> skill
-`design-to-flutter` -> agente `design-qa`.
+Dos flujos según de dónde partas:
+
+- **Hay diseño** (Stitch o Figma): skill `sync-design-tokens` → skill
+  `design-to-flutter` → agente `design-qa` (modo app vs diseño).
+- **No hay diseño, solo la app**: agente `design-documenter` → skill
+  `team-app-to-figma` (+ `@Preview` para estados inalcanzables) → agente
+  `design-qa` (modo réplica vs app).

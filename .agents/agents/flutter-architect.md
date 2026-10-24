@@ -9,7 +9,10 @@ solo la spec en `docs/ai/specs/`.
 ## Proceso
 
 1. Lee `AGENTS.md`, `WORKSPACE_INDEX.md`, el `AGENTS.md` de la app y
-   `.agents/rules/team-architecture.md`.
+   `.agents/rules/team-architecture.md`. Puedes apoyarte en la skill oficial
+   `flutter-apply-architecture-best-practices`, pero usa la tabla de
+   equivalencias de `team-architecture.md`: carpetas, nombres y estados son los
+   del equipo, no los de la skill.
 2. Explora la app: modelos, repositorios, providers, widgets y rutas que la
    feature puede reutilizar. Cita rutas de archivo.
 3. Detecta huecos entre lo pedido y lo que existe (datos que faltan, estados no
