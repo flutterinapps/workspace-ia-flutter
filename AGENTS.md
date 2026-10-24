@@ -18,6 +18,29 @@ Gemini CLI, Antigravity, Codex, Cursor, Copilot). Este archivo es la **fuente
 | `docs/ai/specs/` | Specs de features: se escriben antes del código. |
 | `tool/` | `setup_ai.sh`, `new_app.sh`, `index_apps.sh`. |
 
+## Cómo extender el workspace
+
+Todo lo nuevo se crea en la **fuente única** `.agents/`. Nunca escribas
+directamente en `.claude/`, `.gemini/`, `.cursor/` ni `.github/`: esas carpetas
+son enlaces a `.agents/` (salvo los archivos de configuración propios de cada
+herramienta).
+
+| Quiero crear… | Dónde | Formato |
+|---|---|---|
+| Una regla que aplique siempre o por contexto | `.agents/rules/team-<tema>.md` | Markdown con frontmatter `trigger: always_on` o `trigger: model_decision` + `description:`. Si es `always_on`, añádela también a la lista de abajo y a `CLAUDE.md`/`GEMINI.md`. |
+| Una skill (receta paso a paso) | `.agents/skills/<nombre>/SKILL.md` | Frontmatter `name` (igual a la carpeta) y `description` que diga **cuándo** usarla. Ejemplos o scripts en subcarpetas. |
+| Un agente especializado | `.agents/agents/<nombre>.md` | Frontmatter `name` y `description`; el cuerpo es su prompt de sistema. Sin campo `tools` para que sirva en Claude y Gemini. |
+| Un flujo / comando | `.agents/workflows/<nombre>.md` + `.claude/commands/<nombre>.md` y `.gemini/commands/<nombre>.toml` que lo invoquen | Ver `new-feature` como ejemplo. |
+| Un guardarraíl (hook) | Script en `tool/hooks/` + registro en `.claude/settings.json` | Salir con código 2 para que el agente lea el error. |
+| Un servidor MCP | `.mcp.json`, `.gemini/settings.json`, `.cursor/mcp.json`, `.vscode/mcp.json` | Secretos solo como variables de entorno (`${VAR}`). |
+| Una app | `tool/new_app.sh <nombre>` | Crea `apps/<nombre>/` con su `AGENTS.md`. |
+| Contexto de una app | `apps/<app>/AGENTS.md` (máx. ~60 líneas) | Solo lo que la hace distinta. |
+
+Las skills oficiales son las registradas en `.config/dart_skills/skills_config.json`;
+no se editan a mano, se actualizan con `tool/setup_ai.sh --update`. Las skills
+nuevas del equipo llevan el prefijo `team-` para distinguirlas. Si necesitas
+cambiar una oficial, crea una `team-` con tu versión.
+
 ## Reglas que aplican siempre
 
 Lee y cumple estos archivos al empezar cualquier tarea:

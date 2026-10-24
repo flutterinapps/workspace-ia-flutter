@@ -19,7 +19,8 @@ Primera pregunta al agente: *"¿Qué reglas, skills, agentes y herramientas MCP
 tienes cargados?"*
 
 Requisitos: Flutter 3.38+ (Dart ≥ 3.9 para el Dart MCP server). Opcional:
-`STITCH_API_KEY` para Stitch; Figma pide login la primera vez.
+`STITCH_API_KEY` para Stitch. Figma en Claude Code viene con su plugin oficial:
+`claude plugin install figma@claude-plugins-official` (pide login la primera vez).
 
 ## Las 8 piezas
 
