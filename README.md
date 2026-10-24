@@ -80,7 +80,9 @@ una sola fuente de verdad.
 - **`dart-lang/skills`**: las skills de Dart (el plugin ya las incluye).
 - **`package:skills`**: el **instalador**: `dart run skills@ add <repo-git>` o
   `dart run skills@ get` (skills que traen tus dependencias). Aquí se usó para
-  dejar las 25 oficiales versionadas en `.agents/skills/` para cualquier agente.
+  dejar 21 oficiales versionadas en `.agents/skills/` para cualquier agente
+  (quitamos 4 que no aplican a apps: CLI, FFI y `package:path`).
+  Actualizar: `tool/setup_ai.sh --update` y revisar `git diff`.
 
 ## Créditos
 
