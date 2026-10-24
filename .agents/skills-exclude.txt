@@ -2,5 +2,3 @@
 # tool/setup_ai.sh las quita después de instalar o actualizar.
 dart-build-cli-app
 dart-setup-ffi-assets
-dart-use-ffigen
-dart-use-path-package

@@ -6,127 +6,139 @@
         "skills": [
           {
             "name": "flutter-implement-json-serialization",
-            "installedAt": "2026-10-24T08:04:46.261530Z",
+            "installedAt": "2026-10-24T08:11:26.922392Z",
             "contentHash": "jC7hDMdTDD0frc0y0+kN0Q==",
             "path": "skills/flutter-implement-json-serialization"
           },
           {
             "name": "dart-use-pattern-matching",
-            "installedAt": "2026-10-24T08:04:46.263342Z",
+            "installedAt": "2026-10-24T08:11:26.924650Z",
             "contentHash": "gFB8nFl9q8HMcIKJGZlcHQ==",
             "path": "skills/dart-use-pattern-matching"
           },
           {
             "name": "flutter-add-widget-test",
-            "installedAt": "2026-10-24T08:04:46.264240Z",
+            "installedAt": "2026-10-24T08:11:26.925565Z",
             "contentHash": "FzecKt4J27Rmhl/zaDbaWA==",
             "path": "skills/flutter-add-widget-test"
           },
           {
             "name": "flutter-use-http-package",
-            "installedAt": "2026-10-24T08:04:46.265134Z",
+            "installedAt": "2026-10-24T08:11:26.926401Z",
             "contentHash": "k316EVUUi1d4WlV8e47w5Q==",
             "path": "skills/flutter-use-http-package"
           },
           {
             "name": "flutter-build-responsive-layout",
-            "installedAt": "2026-10-24T08:04:46.265969Z",
+            "installedAt": "2026-10-24T08:11:26.927226Z",
             "contentHash": "gBxqGFG9MvBAZgKyWHKFyQ==",
             "path": "skills/flutter-build-responsive-layout"
           },
           {
             "name": "flutter-apply-architecture-best-practices",
-            "installedAt": "2026-10-24T08:04:46.266830Z",
+            "installedAt": "2026-10-24T08:11:26.928057Z",
             "contentHash": "xR4gAYksQ6W4FvrjpvHV3A==",
             "path": "skills/flutter-apply-architecture-best-practices"
           },
           {
             "name": "dart-write-documentation",
-            "installedAt": "2026-10-24T08:04:46.267655Z",
+            "installedAt": "2026-10-24T08:11:26.928876Z",
             "contentHash": "64nJUzpJ+sDVo2FHkcBHHg==",
             "path": "skills/dart-write-documentation"
           },
           {
             "name": "dart-generate-test-mocks",
-            "installedAt": "2026-10-24T08:04:46.268465Z",
+            "installedAt": "2026-10-24T08:11:26.929674Z",
             "contentHash": "kx0+ybzEkMzmVJBuJHgsDQ==",
             "path": "skills/dart-generate-test-mocks"
           },
           {
+            "name": "dart-use-ffigen",
+            "installedAt": "2026-10-24T08:11:26.930561Z",
+            "contentHash": "hTYntbDqTCtS3UOdN4Tc5A==",
+            "path": "skills/dart-use-ffigen"
+          },
+          {
+            "name": "dart-use-path-package",
+            "installedAt": "2026-10-24T08:11:26.932515Z",
+            "contentHash": "LERN+D9gzQyjzmA4lVVA8g==",
+            "path": "skills/dart-use-path-package"
+          },
+          {
             "name": "flutter-add-widget-preview",
-            "installedAt": "2026-10-24T08:04:46.272290Z",
+            "installedAt": "2026-10-24T08:11:26.933363Z",
             "contentHash": "yuA9sw2YCZNLbl7bV1AWCw==",
             "path": "skills/flutter-add-widget-preview"
           },
           {
             "name": "flutter-setup-declarative-routing",
-            "installedAt": "2026-10-24T08:04:46.273098Z",
+            "installedAt": "2026-10-24T08:11:26.934189Z",
             "contentHash": "0/j9PSB16r7eqKdm3xZzXw==",
             "path": "skills/flutter-setup-declarative-routing"
           },
           {
             "name": "dart-resolve-package-conflicts",
-            "installedAt": "2026-10-24T08:04:46.273823Z",
+            "installedAt": "2026-10-24T08:11:26.934949Z",
             "contentHash": "P1PB2AipggVpvuq7a946wg==",
             "path": "skills/dart-resolve-package-conflicts"
           },
           {
             "name": "dart-collect-coverage",
-            "installedAt": "2026-10-24T08:04:46.274619Z",
+            "installedAt": "2026-10-24T08:11:26.935772Z",
             "contentHash": "B9/qZ2V7FxeX+MIy1Pc2iA==",
             "path": "skills/dart-collect-coverage"
           },
           {
             "name": "dart-use-doc-examples",
-            "installedAt": "2026-10-24T08:04:46.275359Z",
+            "installedAt": "2026-10-24T08:11:26.936556Z",
             "contentHash": "Tt8hXMKuQl1PhF8i9cKbkA==",
             "path": "skills/dart-use-doc-examples"
           },
           {
             "name": "dart-use-primary-constructors",
-            "installedAt": "2026-10-24T08:04:46.276157Z",
+            "installedAt": "2026-10-24T08:11:26.937367Z",
             "contentHash": "KGPHLdTcdu14G+LPwL5YFQ==",
             "path": "skills/dart-use-primary-constructors"
           },
           {
             "name": "flutter-fix-layout-issues",
-            "installedAt": "2026-10-24T08:04:46.277626Z",
+            "installedAt": "2026-10-24T08:11:26.938957Z",
             "contentHash": "u/ZzEgUP9eg1TFe4v9KmCQ==",
             "path": "skills/flutter-fix-layout-issues"
           },
           {
             "name": "dart-migrate-to-checks-package",
-            "installedAt": "2026-10-24T08:04:46.278376Z",
+            "installedAt": "2026-10-24T08:11:26.939973Z",
             "contentHash": "qnEkEh/eW/JmKpsNQ80yRQ==",
             "path": "skills/dart-migrate-to-checks-package"
           },
           {
             "name": "dart-fix-runtime-errors",
-            "installedAt": "2026-10-24T08:04:46.279054Z",
+            "installedAt": "2026-10-24T08:11:26.940873Z",
             "contentHash": "ttSySW/9ys1is3DsMxjrMA==",
             "path": "skills/dart-fix-runtime-errors"
           },
           {
             "name": "dart-add-unit-test",
-            "installedAt": "2026-10-24T08:04:46.279748Z",
+            "installedAt": "2026-10-24T08:11:26.941629Z",
             "contentHash": "BTBQcGE2w7XxaizcWbHAmQ==",
             "path": "skills/dart-add-unit-test"
           },
           {
             "name": "flutter-add-integration-test",
-            "installedAt": "2026-10-24T08:04:46.280428Z",
+            "installedAt": "2026-10-24T08:11:26.942381Z",
             "contentHash": "/PxwGBPNmmTMUqvExCD9bg==",
             "path": "skills/flutter-add-integration-test"
           },
           {
             "name": "dart-run-static-analysis",
-            "installedAt": "2026-10-24T08:04:46.281140Z",
+            "installedAt": "2026-10-24T08:11:26.943115Z",
             "contentHash": "wEl5bxwKPCSBFoChl5ZENQ==",
             "path": "skills/dart-run-static-analysis"
           },
           {
             "name": "flutter-setup-localization",
-            "installedAt": "2026-10-24T08:04:46.281876Z",
+            "installedAt": "2026-10-24T08:11:26.943832Z",
             "contentHash": "yCerR0eEktC1qzgW8Zs6Uw==",
             "path": "skills/flutter-setup-localization"
           }
