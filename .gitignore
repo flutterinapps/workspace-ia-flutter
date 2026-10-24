@@ -16,3 +16,13 @@
 # Ajustes personales de agentes
 **/.claude/settings.local.json
 **/.widget_preview/
+
+# Apps con su propio repo (privado o aparte): heredan el workspace, no se publican aquí.
+/apps/*
+!/apps/kinetix/
+
+# Generado por tool/index_apps.sh (incluye apps privadas)
+WORKSPACE_INDEX.md
+
+# Índice local de flutter-radar (se regenera con radar.py ingest)
+.radar/

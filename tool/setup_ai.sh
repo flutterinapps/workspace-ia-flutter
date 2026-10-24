@@ -86,10 +86,18 @@ for pubspec in apps/*/pubspec.yaml; do
 done
 tool/index_apps.sh >/dev/null
 
+if command -v uv >/dev/null; then
+  echo "  flutter-radar: actualizando el índice de novedades"
+  uv run -q tool/flutter_radar/radar.py ingest | tail -1 || echo "  flutter-radar: sin red, se omite"
+else
+  echo "  flutter-radar: instala uv (https://docs.astral.sh/uv/) para usar el radar"
+fi
+
 cat <<MSG
 
 Listo. Abre tu agente en: $root
   claude   |  gemini   |  agy   |  codex
 Pregúntale: "¿Qué reglas, skills, agentes y herramientas MCP tienes cargados?"
-Stitch necesita la variable STITCH_API_KEY; Figma pide login la primera vez.\nPara que el agente maneje la app: flutter run y pásale el URI del VM service.
+Stitch necesita STITCH_API_KEY y Developer Knowledge GOOGLE_DK_API_KEY; Figma pide login la primera vez.
+Para que el agente maneje la app: flutter run y pásale el URI del VM service.
 MSG

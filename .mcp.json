@@ -22,6 +22,22 @@
         "run",
         "marionette_mcp"
       ]
+    },
+    "flutter-radar": {
+      "command": "uv",
+      "args": [
+        "run",
+        "-q",
+        "tool/flutter_radar/radar.py",
+        "serve"
+      ]
+    },
+    "developer-knowledge": {
+      "type": "http",
+      "url": "https://developerknowledge.googleapis.com/mcp",
+      "headers": {
+        "X-Goog-Api-Key": "${GOOGLE_DK_API_KEY}"
+      }
     }
   }
 }

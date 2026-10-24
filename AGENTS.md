@@ -58,7 +58,8 @@ Léelas solo cuando la tarea lo requiera (la primera línea de cada una dice cu�
 `flutter-color-scheme-best-practices.md`, `flutter-visual-design-theming.md`,
 `flutter-data-flow-handling.md`, `flutter-logging-code-generation.md`,
 `flutter-documentation.md`, `flutter-project-structure.md`,
-`flutter-interaction-guidelines.md`, `team-ai-features-security.md`.
+`flutter-interaction-guidelines.md`, `team-ai-features-security.md`,
+`team-knowledge-sources.md` (qué fuente consultar sobre Flutter/Dart).
 
 ## Comandos
 
@@ -84,6 +85,11 @@ Desde la raíz: `tool/setup_ai.sh` (prepara agentes), `tool/new_app.sh <nombre>`
   hacer scroll, capturar pantalla, leer logs). Requiere `flutter run` y el URI
   del VM service. Ver skill `marionette-flutter-drive-app`.
 - `figma` y `stitch`: leer diseños; ver skill `design-to-flutter`.
+- `developer-knowledge` (Google): documentación oficial de docs.flutter.dev y
+  dart.dev en vivo. Requiere `GOOGLE_DK_API_KEY`.
+- `flutter-radar` (local): lo que la documentación no tiene — videos oficiales,
+  blogs, releases de SDK y herramientas, paquetes nuevos y material propio.
+  `whats_new_flutter`, `search_flutter`. Ver `team-knowledge-sources.md`.
 
 Qué herramienta usar para probar qué: `docs/ai/testing-lanes.md`.
 

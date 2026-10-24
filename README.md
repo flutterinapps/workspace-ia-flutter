@@ -54,6 +54,32 @@ usarse.
 Las carpetas por agente son **enlaces** a `.agents/` (los crea `tool/setup_ai.sh`):
 una sola fuente de verdad.
 
+## Tus otras apps
+
+Mete cualquier app Flutter en `apps/<nombre>/` con **su propio repo git**:
+hereda reglas, skills, agentes, MCP y hooks del workspace, pero el `.gitignore`
+la excluye (`/apps/*` salvo `kinetix`), así que su código no se publica aquí.
+Dale un `AGENTS.md` corto con lo propio y corre `tool/index_apps.sh`.
+
+## Conocimiento: docs oficiales + flutter-radar
+
+| Pregunta | Fuente |
+|---|---|
+| API, widgets, guías oficiales | MCP `developer-knowledge` de Google (requiere `GOOGLE_DK_API_KEY`) |
+| Paquetes de pub.dev | MCP `dart` |
+| Lo nuevo: videos oficiales, blogs, releases de SDK y herramientas, material propio | MCP `flutter-radar` (local, gratis) |
+
+`flutter-radar` guarda títulos, resúmenes y enlaces en `.radar/radar.db` (SQLite
+FTS5). Fuentes en `tool/flutter_radar/sources.toml`.
+
+```bash
+uv run tool/flutter_radar/radar.py ingest      # actualizar (también lo hace setup_ai.sh)
+uv run tool/flutter_radar/radar.py new 7       # novedades de la semana
+uv run tool/flutter_radar/radar.py search "genui a2ui"
+```
+
+En el agente: skill `team-whats-new` → "¿qué hay de nuevo y qué nos afecta?".
+
 ## Probar con agentes
 
 Cuatro carriles (desarrollo, exploración con Marionette, regresión con Patrol,

@@ -1,0 +1,87 @@
+# Fuentes de flutter-radar: lo que NO cubre el Developer Knowledge MCP de Google
+# (que ya indexa docs.flutter.dev y dart.dev) ni el Dart MCP (pub.dev).
+# Solo se guardan títulos, resúmenes y enlaces: nunca el contenido completo.
+#
+# kind: video | blog | release | package | own
+# include: si existe, solo entra lo que contenga alguna de esas palabras.
+
+[[source]]
+name = "YouTube · Flutter"
+kind = "video"
+type = "atom"
+url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCwXdFgeE9KYzlDdR7TG9cMw"
+
+[[source]]
+name = "YouTube · Google for Developers"
+kind = "video"
+type = "atom"
+url = "https://www.youtube.com/feeds/videos.xml?channel_id=UC_x5XG1OV2P6uZZ5FSM9Ttw"
+include = ["flutter", "dart", "antigravity", "gemini cli", "firebase"]
+
+[[source]]
+name = "Blog · Flutter (Medium)"
+kind = "blog"
+type = "rss"
+url = "https://medium.com/feed/flutter"
+
+[[source]]
+name = "Blog · Dart (Medium)"
+kind = "blog"
+type = "rss"
+url = "https://medium.com/feed/dartlang"
+
+[[source]]
+name = "Blog · Code With Andrea"
+kind = "blog"
+type = "rss"
+url = "https://codewithandrea.com/rss.xml"
+
+[[source]]
+name = "Blog · Very Good Ventures"
+kind = "blog"
+type = "rss"
+url = "https://verygood.ventures/blog/rss.xml"
+include = ["flutter", "dart", "ai", "agent"]
+
+[[source]]
+name = "Flutter SDK (stable)"
+kind = "release"
+type = "flutter_releases"
+url = "https://storage.googleapis.com/flutter_infra_release/releases/releases_macos.json"
+
+[[source]]
+name = "GitHub · flutter/agent-plugins"
+kind = "release"
+type = "github_releases"
+url = "flutter/agent-plugins"
+
+[[source]]
+name = "GitHub · dart-lang/ai"
+kind = "release"
+type = "github_releases"
+url = "dart-lang/ai"
+
+[[source]]
+name = "GitHub · leancodepl/marionette_mcp"
+kind = "release"
+type = "github_releases"
+url = "leancodepl/marionette_mcp"
+
+[[source]]
+name = "GitHub · leancodepl/patrol"
+kind = "release"
+type = "github_releases"
+url = "leancodepl/patrol"
+
+[[source]]
+name = "pub.dev · paquetes publicados"
+kind = "package"
+type = "atom"
+url = "https://pub.dev/feed.atom"
+include = ["flutter", "ai", "mcp", "agent", "skill"]
+
+[[source]]
+name = "Material propio del workspace"
+kind = "own"
+type = "local"
+url = "docs/**/*.md"
