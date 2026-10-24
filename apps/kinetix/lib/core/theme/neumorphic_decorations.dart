@@ -13,7 +13,10 @@ abstract class NeumorphicDecorations {
     Border? border,
   }) {
     if (style == NeumorphicStyle.inset) {
-      return sunken(borderRadius: borderRadius, color: AppColors.surfaceContainerLow);
+      return sunken(
+        borderRadius: borderRadius,
+        color: AppColors.surfaceContainerLow,
+      );
     }
     return raised(
       borderRadius: borderRadius,
@@ -89,10 +92,7 @@ abstract class NeumorphicDecorations {
     return BoxDecoration(
       color: fillColor,
       borderRadius: BorderRadius.circular(borderRadius),
-      border: Border.all(
-        color: borderColor,
-        width: 1.5,
-      ),
+      border: Border.all(color: borderColor, width: 1.5),
       boxShadow: [
         BoxShadow(
           color: Colors.black.withValues(alpha: 0.05),
@@ -103,9 +103,7 @@ abstract class NeumorphicDecorations {
     );
   }
 
-  static BoxDecoration primaryGradientDecoration({
-    double borderRadius = 16.0,
-  }) {
+  static BoxDecoration primaryGradientDecoration({double borderRadius = 16.0}) {
     return BoxDecoration(
       borderRadius: BorderRadius.circular(borderRadius),
       gradient: const LinearGradient(

@@ -26,11 +26,11 @@ class CatalogHomeScreen extends StatelessWidget {
       backgroundColor: AppColors.surface,
       appBar: KinetixAppBar(
         title: loc.appTitle,
+        wishlistCount: wishlistProvider.count,
+        onWishlistTap: () => Navigator.of(context).pushNamed('/wishlist'),
         onCartTap: () {
           Navigator.of(context).push(
-            MaterialPageRoute(
-              builder: (context) => const ShoppingCartScreen(),
-            ),
+            MaterialPageRoute(builder: (context) => const ShoppingCartScreen()),
           );
         },
       ),
@@ -123,26 +123,23 @@ class CatalogHomeScreen extends StatelessWidget {
                   crossAxisSpacing: 14,
                   mainAxisSpacing: 14,
                 ),
-                delegate: SliverChildBuilderDelegate(
-                  (context, index) {
-                    final product = catalogProvider.products[index];
-                    return KinetixProductCard(
-                      product: product,
-                      isFavorite: wishlistProvider.isFavorite(product.id),
-                      onFavoriteToggle: () =>
-                          wishlistProvider.toggleFavorite(product),
-                      onTap: () {
-                        catalogProvider.selectProduct(product);
-                        Navigator.of(context).push(
-                          MaterialPageRoute(
-                            builder: (context) => const ProductDetailScreen(),
-                          ),
-                        );
-                      },
-                    );
-                  },
-                  childCount: catalogProvider.products.length,
-                ),
+                delegate: SliverChildBuilderDelegate((context, index) {
+                  final product = catalogProvider.products[index];
+                  return KinetixProductCard(
+                    product: product,
+                    isFavorite: wishlistProvider.isFavorite(product.id),
+                    onFavoriteToggle: () =>
+                        wishlistProvider.toggleFavorite(product),
+                    onTap: () {
+                      catalogProvider.selectProduct(product);
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => const ProductDetailScreen(),
+                        ),
+                      );
+                    },
+                  );
+                }, childCount: catalogProvider.products.length),
               ),
             ),
         ],

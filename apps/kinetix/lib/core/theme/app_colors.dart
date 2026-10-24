@@ -10,7 +10,7 @@ abstract class AppColors {
   static const Color surfaceContainer = Color(0xFFFDE9EC);
   static const Color surfaceContainerHigh = Color(0xFFF7E4E6);
   static const Color surfaceContainerHighest = Color(0xFFF1DEE0);
-  
+
   static const Color onSurface = Color(0xFF23191B);
   static const Color onSurfaceVariant = Color(0xFF554245);
   static const Color inverseSurface = Color(0xFF392E2F);
@@ -33,7 +33,7 @@ abstract class AppColors {
   static const Color onSecondary = Color(0xFFFFFFFF);
   static const Color secondaryContainer = Color(0xFFFFAAB2);
   static const Color onSecondaryContainer = Color(0xFF7B3B43);
-  
+
   static const Color tertiary = Color(0xFF6B5753);
   static const Color onTertiary = Color(0xFFFFFFFF);
   static const Color tertiaryContainer = Color(0xFF85706B);
@@ -47,7 +47,7 @@ abstract class AppColors {
   static const Color neumorphicLightShadow = Color(0xFFFFFFFF);
   static const Color neumorphicDarkShadow = Color(0xFFE0D1B8);
   static const Color neumorphicInsetDark = Color(0xFFD3C2CA);
-  
+
   // Glassmorphic Tint & Border
   static const Color glassFill = Color(0x99FFFFFF); // 60% Frosted White
   static const Color glassBorder = Color(0x33FFFFFF); // 20% White Edge

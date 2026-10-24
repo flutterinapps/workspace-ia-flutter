@@ -73,10 +73,7 @@ class OrderConfirmationScreen extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(
-                            loc.total,
-                            style: AppTypography.labelSmall,
-                          ),
+                          Text(loc.total, style: AppTypography.labelSmall),
                           Text(
                             CurrencyFormatter.format(order.totalAmount),
                             style: AppTypography.titleLarge.copyWith(

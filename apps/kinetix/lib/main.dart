@@ -10,6 +10,7 @@ import 'data/repositories_impl/product_repository_impl.dart';
 import 'data/repositories_impl/cart_repository_impl.dart';
 import 'data/repositories_impl/payment_repository_impl.dart';
 import 'data/repositories_impl/order_repository_impl.dart';
+import 'data/repositories_impl/wishlist_repository_impl.dart';
 
 import 'presentation/providers/catalog_provider.dart';
 import 'presentation/providers/cart_provider.dart';
@@ -22,6 +23,7 @@ import 'presentation/screens/shopping_cart_screen.dart';
 import 'presentation/screens/checkout_payment_screen.dart';
 import 'presentation/screens/payment_processing_screen.dart';
 import 'presentation/screens/order_confirmation_screen.dart';
+import 'presentation/screens/wishlist_screen.dart';
 
 void main() {
   // Lets AI agents drive the running app through marionette_mcp. Debug only:
@@ -44,13 +46,14 @@ class KinetixApp extends StatelessWidget {
     final cartRepo = CartRepositoryImpl();
     final paymentRepo = PaymentRepositoryImpl();
     final orderRepo = OrderRepositoryImpl();
+    final wishlistRepo = WishlistRepositoryImpl();
 
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => LocaleProvider()),
         ChangeNotifierProvider(create: (_) => CatalogProvider(productRepo)),
         ChangeNotifierProvider(create: (_) => CartProvider(cartRepo)),
-        ChangeNotifierProvider(create: (_) => WishlistProvider()),
+        ChangeNotifierProvider(create: (_) => WishlistProvider(wishlistRepo)),
         ChangeNotifierProvider(
           create: (_) => CheckoutProvider(paymentRepo, orderRepo),
         ),
@@ -75,6 +78,7 @@ class KinetixApp extends StatelessWidget {
               '/checkout': (context) => const CheckoutPaymentScreen(),
               '/processing': (context) => const PaymentProcessingScreen(),
               '/confirmation': (context) => const OrderConfirmationScreen(),
+              '/wishlist': (context) => const WishlistScreen(),
             },
           );
         },

@@ -31,15 +31,21 @@ class KinetixButton extends StatelessWidget {
     switch (variant) {
       case KinetixButtonVariant.primary:
         decoration = NeumorphicDecorations.primaryGradientDecoration();
-        textStyle = AppTypography.labelLarge.copyWith(color: AppColors.onPrimary);
+        textStyle = AppTypography.labelLarge.copyWith(
+          color: AppColors.onPrimary,
+        );
         break;
       case KinetixButtonVariant.secondary:
-        decoration = NeumorphicDecorations.decoration(style: NeumorphicStyle.raised);
+        decoration = NeumorphicDecorations.decoration(
+          style: NeumorphicStyle.raised,
+        );
         textStyle = AppTypography.labelLarge.copyWith(color: AppColors.primary);
         break;
       case KinetixButtonVariant.glass:
         decoration = NeumorphicDecorations.glassDecoration();
-        textStyle = AppTypography.labelLarge.copyWith(color: AppColors.onSurface);
+        textStyle = AppTypography.labelLarge.copyWith(
+          color: AppColors.onSurface,
+        );
         break;
       case KinetixButtonVariant.outlined:
         decoration = BoxDecoration(

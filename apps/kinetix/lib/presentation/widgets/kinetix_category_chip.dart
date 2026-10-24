@@ -31,7 +31,9 @@ class KinetixCategoryChip extends StatelessWidget {
         child: Text(
           label,
           style: AppTypography.labelSmall.copyWith(
-            color: isSelected ? AppColors.onPrimary : AppColors.onSurfaceVariant,
+            color: isSelected
+                ? AppColors.onPrimary
+                : AppColors.onSurfaceVariant,
             fontWeight: isSelected ? FontWeight.w700 : FontWeight.w500,
           ),
         ),

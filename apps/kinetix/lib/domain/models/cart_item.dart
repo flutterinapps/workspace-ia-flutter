@@ -47,7 +47,9 @@ class CartItem extends Equatable {
     return CartItem(
       product: Product.fromJson(json['product'] as Map<String, dynamic>),
       selectedSize: json['selected_size'] != null
-          ? ProductSize.values.firstWhere((e) => e.name == json['selected_size'])
+          ? ProductSize.values.firstWhere(
+              (e) => e.name == json['selected_size'],
+            )
           : null,
       selectedColor: json['selected_color'] as String?,
       quantity: json['quantity'] as int? ?? 1,

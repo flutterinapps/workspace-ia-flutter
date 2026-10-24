@@ -52,10 +52,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
 
     if (product == null) {
       return Scaffold(
-        appBar: KinetixAppBar(
-          title: loc.appTitle,
-          showBackButton: true,
-        ),
+        appBar: KinetixAppBar(title: loc.appTitle, showBackButton: true),
         body: Center(child: Text(loc.productNotFound)),
       );
     }
@@ -69,9 +66,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
         showBackButton: true,
         onCartTap: () {
           Navigator.of(context).push(
-            MaterialPageRoute(
-              builder: (context) => const ShoppingCartScreen(),
-            ),
+            MaterialPageRoute(builder: (context) => const ShoppingCartScreen()),
           );
         },
       ),
@@ -113,7 +108,9 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                               wishlistProvider.toggleFavorite(product),
                           child: Icon(
                             isFav ? Icons.favorite : Icons.favorite_border,
-                            color: isFav ? AppColors.primary : AppColors.outline,
+                            color: isFav
+                                ? AppColors.primary
+                                : AppColors.outline,
                           ),
                         ),
                       ),

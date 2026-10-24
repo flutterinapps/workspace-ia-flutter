@@ -61,11 +61,13 @@ class Product extends Equatable {
         (c) => c.name == json['category'],
         orElse: () => ProductCategory.all,
       ),
-      availableSizes: (json['available_sizes'] as List<dynamic>?)
+      availableSizes:
+          (json['available_sizes'] as List<dynamic>?)
               ?.map((s) => ProductSize.values.firstWhere((e) => e.name == s))
               .toList() ??
           const [],
-      availableColors: (json['available_colors'] as List<dynamic>?)
+      availableColors:
+          (json['available_colors'] as List<dynamic>?)
               ?.map((c) => c as String)
               .toList() ??
           const [],
@@ -78,17 +80,17 @@ class Product extends Equatable {
 
   @override
   List<Object?> get props => [
-        id,
-        title,
-        description,
-        price,
-        imageUrl,
-        category,
-        availableSizes,
-        availableColors,
-        isNew,
-        isLimitedEdition,
-        rating,
-        reviewsCount,
-      ];
+    id,
+    title,
+    description,
+    price,
+    imageUrl,
+    category,
+    availableSizes,
+    availableColors,
+    isNew,
+    isLimitedEdition,
+    rating,
+    reviewsCount,
+  ];
 }

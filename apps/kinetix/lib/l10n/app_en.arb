@@ -1,6 +1,5 @@
 {
   "@@locale": "en",
-
   "appTitle": "Kinetix SportStore",
   "@appTitle": {
     "description": "Application name shown in the app bar"
@@ -13,7 +12,6 @@
   "@searchPlaceholder": {
     "description": "Hint text of the catalog search field"
   },
-
   "categories": "Categories",
   "@categories": {
     "description": "Section title for the category filters"
@@ -38,7 +36,6 @@
   "@catEquipment": {
     "description": "Category filter: training equipment"
   },
-
   "featured": "Featured Products",
   "@featured": {
     "description": "Section title of the featured products grid"
@@ -51,7 +48,6 @@
   "@productNotFound": {
     "description": "Error state shown when a product id cannot be resolved"
   },
-
   "addToCart": "Add to Cart",
   "@addToCart": {
     "description": "Primary call to action on the product detail screen"
@@ -80,7 +76,6 @@
   "@description": {
     "description": "Section title for the product description"
   },
-
   "cart": "Shopping Cart",
   "@cart": {
     "description": "Title of the shopping cart screen"
@@ -93,7 +88,6 @@
   "@emptyCart": {
     "description": "Empty state of the shopping cart"
   },
-
   "subtotal": "Subtotal",
   "@subtotal": {
     "description": "Order summary line: price before shipping and taxes"
@@ -118,7 +112,6 @@
   "@total": {
     "description": "Order summary line: final amount"
   },
-
   "applyCoupon": "Apply Coupon",
   "@applyCoupon": {
     "description": "Button that validates the discount code"
@@ -135,7 +128,6 @@
   "@couponApplied": {
     "description": "Confirmation shown when the coupon is accepted"
   },
-
   "proceedToCheckout": "Proceed to Checkout",
   "@proceedToCheckout": {
     "description": "Button that moves from the cart to the payment screen"
@@ -186,7 +178,6 @@
   "@cardholderName": {
     "description": "Label of the cardholder name field"
   },
-
   "shippingAddress": "Shipping Address",
   "@shippingAddress": {
     "description": "Section title of the shipping form"
@@ -211,7 +202,6 @@
   "@postalCode": {
     "description": "Label of the postal code field"
   },
-
   "payNow": "Pay Now",
   "@payNow": {
     "description": "Button that submits the payment"
@@ -224,7 +214,6 @@
   "@paymentFailed": {
     "description": "Generic error shown when the payment is rejected"
   },
-
   "orderConfirmed": "Order Confirmed!",
   "@orderConfirmed": {
     "description": "Title of the order confirmation screen"
@@ -241,7 +230,6 @@
   "@backToShop": {
     "description": "Button that returns to the catalog"
   },
-
   "wishlist": "Wishlist",
   "@wishlist": {
     "description": "Title of the favorite products list"
@@ -257,5 +245,25 @@
   "limitedEdition": "LIMITED EDITION",
   "@limitedEdition": {
     "description": "Badge for limited edition products"
+  },
+  "wishlistEmptyBody": "Tap the heart on any product to save it here.",
+  "@wishlistEmptyBody": {
+    "description": "Supporting text of the wishlist empty state"
+  },
+  "exploreCatalog": "Explore catalog",
+  "@exploreCatalog": {
+    "description": "Button that leaves the empty wishlist and goes back to the catalog"
+  },
+  "wishlistLoadError": "We could not load your favorites.",
+  "@wishlistLoadError": {
+    "description": "Error message when the wishlist fails to load"
+  },
+  "retry": "Retry",
+  "@retry": {
+    "description": "Button to retry a failed request"
+  },
+  "openWishlist": "Open favorites",
+  "@openWishlist": {
+    "description": "Tooltip and accessibility label of the wishlist button in the app bar"
   }
 }

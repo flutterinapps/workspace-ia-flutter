@@ -13,15 +13,15 @@ class Cart extends Equatable {
     this.appliedCouponCode,
   });
 
-  double get subtotal =>
-      items.fold(0.0, (sum, item) => sum + item.totalPrice);
+  double get subtotal => items.fold(0.0, (sum, item) => sum + item.totalPrice);
 
   double get discountAmount => subtotal * (discountPercentage / 100);
 
   double get subtotalAfterDiscount => subtotal - discountAmount;
 
   double get shippingFee {
-    if (items.isEmpty || subtotalAfterDiscount >= AppConstants.freeShippingThreshold) {
+    if (items.isEmpty ||
+        subtotalAfterDiscount >= AppConstants.freeShippingThreshold) {
       return 0.0;
     }
     return AppConstants.defaultShippingFee;
@@ -31,8 +31,7 @@ class Cart extends Equatable {
 
   double get total => subtotalAfterDiscount + shippingFee + taxAmount;
 
-  int get totalItemCount =>
-      items.fold(0, (sum, item) => sum + item.quantity);
+  int get totalItemCount => items.fold(0, (sum, item) => sum + item.quantity);
 
   Cart copyWith({
     List<CartItem>? items,
@@ -56,11 +55,13 @@ class Cart extends Equatable {
 
   factory Cart.fromJson(Map<String, dynamic> json) {
     return Cart(
-      items: (json['items'] as List<dynamic>?)
+      items:
+          (json['items'] as List<dynamic>?)
               ?.map((item) => CartItem.fromJson(item as Map<String, dynamic>))
               .toList() ??
           const [],
-      discountPercentage: (json['discount_percentage'] as num?)?.toDouble() ?? 0.0,
+      discountPercentage:
+          (json['discount_percentage'] as num?)?.toDouble() ?? 0.0,
       appliedCouponCode: json['applied_coupon_code'] as String?,
     );
   }

@@ -33,7 +33,9 @@ class KinetixSizeSelector extends StatelessWidget {
             height: 44,
             alignment: Alignment.center,
             decoration: isSelected
-                ? NeumorphicDecorations.primaryGradientDecoration(borderRadius: 12)
+                ? NeumorphicDecorations.primaryGradientDecoration(
+                    borderRadius: 12,
+                  )
                 : NeumorphicDecorations.decoration(
                     style: NeumorphicStyle.raised,
                     borderRadius: 12,

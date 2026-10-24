@@ -38,7 +38,9 @@ class KinetixProductCard extends StatelessWidget {
               child: Stack(
                 children: [
                   ClipRRect(
-                    borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
+                    borderRadius: const BorderRadius.vertical(
+                      top: Radius.circular(20),
+                    ),
                     child: Container(
                       width: double.infinity,
                       color: AppColors.surfaceContainerLow,
@@ -80,7 +82,9 @@ class KinetixProductCard extends StatelessWidget {
                         child: Icon(
                           isFavorite ? Icons.favorite : Icons.favorite_border,
                           size: 18,
-                          color: isFavorite ? AppColors.primary : AppColors.onSurfaceVariant,
+                          color: isFavorite
+                              ? AppColors.primary
+                              : AppColors.onSurfaceVariant,
                         ),
                       ),
                     ),

@@ -7,7 +7,7 @@ class CartRepositoryImpl implements CartRepository {
   final MockCartLocalDatasource _datasource;
 
   CartRepositoryImpl([MockCartLocalDatasource? datasource])
-      : _datasource = datasource ?? MockCartLocalDatasource();
+    : _datasource = datasource ?? MockCartLocalDatasource();
 
   @override
   Future<Cart> getCart() async {

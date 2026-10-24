@@ -104,10 +104,7 @@ class _CheckoutPaymentScreenState extends State<CheckoutPaymentScreen> {
 
     return Scaffold(
       backgroundColor: AppColors.surface,
-      appBar: KinetixAppBar(
-        title: loc.checkout,
-        showBackButton: true,
-      ),
+      appBar: KinetixAppBar(title: loc.checkout, showBackButton: true),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16),
         child: Form(
@@ -120,10 +117,7 @@ class _CheckoutPaymentScreenState extends State<CheckoutPaymentScreen> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
-                      loc.total,
-                      style: AppTypography.titleLarge,
-                    ),
+                    Text(loc.total, style: AppTypography.titleLarge),
                     Text(
                       CurrencyFormatter.format(cart.total),
                       style: AppTypography.headlineMedium.copyWith(
@@ -145,21 +139,27 @@ class _CheckoutPaymentScreenState extends State<CheckoutPaymentScreen> {
                 type: PaymentMethodType.applePay,
                 title: loc.applePay,
                 icon: Icons.apple,
-                isSelected: checkout.selectedPaymentMethod == PaymentMethodType.applePay,
+                isSelected:
+                    checkout.selectedPaymentMethod ==
+                    PaymentMethodType.applePay,
               ),
               const SizedBox(height: 10),
               _buildPaymentOption(
                 type: PaymentMethodType.googlePay,
                 title: loc.googlePay,
                 icon: Icons.g_mobiledata,
-                isSelected: checkout.selectedPaymentMethod == PaymentMethodType.googlePay,
+                isSelected:
+                    checkout.selectedPaymentMethod ==
+                    PaymentMethodType.googlePay,
               ),
               const SizedBox(height: 10),
               _buildPaymentOption(
                 type: PaymentMethodType.creditCard,
                 title: loc.creditCard,
                 icon: Icons.credit_card_rounded,
-                isSelected: checkout.selectedPaymentMethod == PaymentMethodType.creditCard,
+                isSelected:
+                    checkout.selectedPaymentMethod ==
+                    PaymentMethodType.creditCard,
               ),
               const SizedBox(height: 24),
               // Shipping Address Section
@@ -185,7 +185,8 @@ class _CheckoutPaymentScreenState extends State<CheckoutPaymentScreen> {
               ),
               const SizedBox(height: 24),
               // Credit Card Form (If selected)
-              if (checkout.selectedPaymentMethod == PaymentMethodType.creditCard) ...[
+              if (checkout.selectedPaymentMethod ==
+                  PaymentMethodType.creditCard) ...[
                 Text(
                   loc.creditCard,
                   style: AppTypography.headlineMedium.copyWith(fontSize: 18),
@@ -223,14 +224,16 @@ class _CheckoutPaymentScreenState extends State<CheckoutPaymentScreen> {
                   type: PaymentMethodType.applePay,
                   onPressed: _onPayPressed,
                 )
-              else if (checkout.selectedPaymentMethod == PaymentMethodType.googlePay)
+              else if (checkout.selectedPaymentMethod ==
+                  PaymentMethodType.googlePay)
                 KinetixNativePayButton(
                   type: PaymentMethodType.googlePay,
                   onPressed: _onPayPressed,
                 )
               else
                 KinetixButton(
-                  label: '${loc.payNow} (${CurrencyFormatter.format(cart.total)})',
+                  label:
+                      '${loc.payNow} (${CurrencyFormatter.format(cart.total)})',
                   width: double.infinity,
                   onPressed: _onPayPressed,
                 ),
@@ -264,7 +267,10 @@ class _CheckoutPaymentScreenState extends State<CheckoutPaymentScreen> {
         ),
         child: Row(
           children: [
-            Icon(icon, color: isSelected ? AppColors.primary : AppColors.outline),
+            Icon(
+              icon,
+              color: isSelected ? AppColors.primary : AppColors.outline,
+            ),
             const SizedBox(width: 12),
             Text(
               title,

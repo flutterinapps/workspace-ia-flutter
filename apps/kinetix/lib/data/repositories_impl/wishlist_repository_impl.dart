@@ -6,7 +6,7 @@ class WishlistRepositoryImpl implements WishlistRepository {
   final MockWishlistLocalDatasource _localDatasource;
 
   WishlistRepositoryImpl([MockWishlistLocalDatasource? localDatasource])
-      : _localDatasource = localDatasource ?? MockWishlistLocalDatasource();
+    : _localDatasource = localDatasource ?? MockWishlistLocalDatasource();
 
   @override
   Future<List<Product>> getFavorites() => _localDatasource.getFavorites();

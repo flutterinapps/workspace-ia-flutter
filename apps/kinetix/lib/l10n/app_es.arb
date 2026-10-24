@@ -1,21 +1,17 @@
 {
   "@@locale": "es",
-
   "appTitle": "Kinetix SportStore",
   "tagline": "High Performance & Tactile Luxury",
   "searchPlaceholder": "Buscar zapatillas, ropa, equipamiento...",
-
   "categories": "Categorías",
   "catAll": "Todos",
   "catApparel": "Ropa",
   "catFootwear": "Calzado",
   "catAccessories": "Accesorios",
   "catEquipment": "Equipamiento",
-
   "featured": "Destacados",
   "noProductsFound": "No se encontraron productos",
   "productNotFound": "Producto no encontrado",
-
   "addToCart": "Añadir al Carrito",
   "selectSize": "Selecciona tu Talla",
   "size": "Talla",
@@ -23,23 +19,19 @@
   "color": "Color",
   "quantity": "Cantidad",
   "description": "Descripción",
-
   "cart": "Carrito de Compras",
   "items": "artículos",
   "emptyCart": "Tu carrito está vacío",
-
   "subtotal": "Subtotal",
   "shipping": "Envío",
   "freeShipping": "¡Envío Gratis!",
   "tax": "Impuestos",
   "discount": "Descuento",
   "total": "Total",
-
   "applyCoupon": "Aplicar Cupón",
   "couponCode": "Código de descuento",
   "invalidCoupon": "Código no válido",
   "couponApplied": "¡Cupón aplicado!",
-
   "proceedToCheckout": "Proceder al Pago",
   "checkout": "Pago Seguro",
   "paymentMethod": "Método de Pago",
@@ -51,25 +43,26 @@
   "expiry": "MM/AA",
   "cvv": "CVV",
   "cardholderName": "Nombre en la Tarjeta",
-
   "shippingAddress": "Dirección de Envío",
   "fullName": "Nombre Completo",
   "email": "Correo Electrónico",
   "address": "Dirección Principal",
   "city": "Ciudad",
   "postalCode": "Código Postal",
-
   "payNow": "Pagar Ahora",
   "processingPayment": "Procesando Pago Seguro...",
   "paymentFailed": "El pago fue rechazado",
-
   "orderConfirmed": "¡Orden Confirmada!",
   "orderNumber": "Número de Orden",
   "orderThankYou": "Gracias por tu compra en Kinetix. Hemos enviado los detalles de la confirmación a tu correo.",
   "backToShop": "Volver a la Tienda",
-
   "wishlist": "Favoritos",
   "noFavorites": "No tienes productos en favoritos aún",
   "newRelease": "NUEVO",
-  "limitedEdition": "EDICIÓN LIMITADA"
+  "limitedEdition": "EDICIÓN LIMITADA",
+  "wishlistEmptyBody": "Toca el corazón de cualquier producto para guardarlo aquí.",
+  "exploreCatalog": "Explorar catálogo",
+  "wishlistLoadError": "No pudimos cargar tus favoritos.",
+  "retry": "Reintentar",
+  "openWishlist": "Abrir favoritos"
 }

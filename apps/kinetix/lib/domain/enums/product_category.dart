@@ -1,12 +1,6 @@
 import '../../l10n/generated/app_localizations.dart';
 
-enum ProductCategory {
-  all,
-  apparel,
-  footwear,
-  accessories,
-  equipment,
-}
+enum ProductCategory { all, apparel, footwear, accessories, equipment }
 
 extension ProductCategoryExtension on ProductCategory {
   String label(AppLocalizations loc) {

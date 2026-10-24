@@ -7,7 +7,7 @@ class ProductRepositoryImpl implements ProductRepository {
   final MockProductRemoteDatasource _remoteDatasource;
 
   ProductRepositoryImpl([MockProductRemoteDatasource? remoteDatasource])
-      : _remoteDatasource = remoteDatasource ?? MockProductRemoteDatasource();
+    : _remoteDatasource = remoteDatasource ?? MockProductRemoteDatasource();
 
   @override
   Future<List<Product>> getProducts({

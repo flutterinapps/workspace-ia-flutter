@@ -35,10 +35,7 @@ class _ShoppingCartScreenState extends State<ShoppingCartScreen> {
 
     return Scaffold(
       backgroundColor: AppColors.surface,
-      appBar: KinetixAppBar(
-        title: loc.cart,
-        showBackButton: true,
-      ),
+      appBar: KinetixAppBar(title: loc.cart, showBackButton: true),
       body: cart.items.isEmpty
           ? Center(
               child: Column(
@@ -50,10 +47,7 @@ class _ShoppingCartScreenState extends State<ShoppingCartScreen> {
                     color: AppColors.outlineVariant,
                   ),
                   const SizedBox(height: 16),
-                  Text(
-                    loc.emptyCart,
-                    style: AppTypography.titleLarge,
-                  ),
+                  Text(loc.emptyCart, style: AppTypography.titleLarge),
                   const SizedBox(height: 20),
                   KinetixButton(
                     label: loc.backToShop,
@@ -105,7 +99,9 @@ class _ShoppingCartScreenState extends State<ShoppingCartScreen> {
                                     ),
                                   const SizedBox(height: 4),
                                   Text(
-                                    CurrencyFormatter.format(item.product.price),
+                                    CurrencyFormatter.format(
+                                      item.product.price,
+                                    ),
                                     style: AppTypography.titleLarge.copyWith(
                                       fontSize: 15,
                                       color: AppColors.primary,
@@ -131,7 +127,9 @@ class _ShoppingCartScreenState extends State<ShoppingCartScreen> {
                   padding: const EdgeInsets.all(16),
                   decoration: const BoxDecoration(
                     color: AppColors.surfaceContainerLowest,
-                    borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+                    borderRadius: BorderRadius.vertical(
+                      top: Radius.circular(24),
+                    ),
                   ),
                   child: Column(
                     children: [
@@ -149,8 +147,9 @@ class _ShoppingCartScreenState extends State<ShoppingCartScreen> {
                             label: loc.applyCoupon,
                             variant: KinetixButtonVariant.secondary,
                             onPressed: () async {
-                              final success = await cartProvider
-                                  .applyCoupon(_couponController.text);
+                              final success = await cartProvider.applyCoupon(
+                                _couponController.text,
+                              );
                               if (context.mounted) {
                                 ScaffoldMessenger.of(context).showSnackBar(
                                   SnackBar(
@@ -209,8 +208,12 @@ class _ShoppingCartScreenState extends State<ShoppingCartScreen> {
     );
   }
 
-  Widget _buildSummaryRow(String label, String value,
-      {bool isTotal = false, bool isHighlight = false}) {
+  Widget _buildSummaryRow(
+    String label,
+    String value, {
+    bool isTotal = false,
+    bool isHighlight = false,
+  }) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 4),
       child: Row(
@@ -221,7 +224,9 @@ class _ShoppingCartScreenState extends State<ShoppingCartScreen> {
             style: isTotal
                 ? AppTypography.titleLarge.copyWith(fontWeight: FontWeight.w800)
                 : AppTypography.bodyMedium.copyWith(
-                    color: isHighlight ? AppColors.primary : AppColors.onSurfaceVariant,
+                    color: isHighlight
+                        ? AppColors.primary
+                        : AppColors.onSurfaceVariant,
                   ),
           ),
           Text(
@@ -233,7 +238,9 @@ class _ShoppingCartScreenState extends State<ShoppingCartScreen> {
                   )
                 : AppTypography.bodyMedium.copyWith(
                     fontWeight: FontWeight.w600,
-                    color: isHighlight ? AppColors.primary : AppColors.onSurface,
+                    color: isHighlight
+                        ? AppColors.primary
+                        : AppColors.onSurface,
                   ),
           ),
         ],
