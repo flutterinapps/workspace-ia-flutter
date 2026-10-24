@@ -37,10 +37,20 @@ No puede fallar → **hooks y lints**. Ver el diseño → **MCP de Figma/Stitch*
 `@Preview(name:, group:, size:, wrapper:, theme:, brightness:, localizations:)`
 · `MultiPreview` · `flutter widget-preview start`.
 
-## 6. Ciclo cerrado (bonus)
+## 6. Que el agente use tu app: Marionette
 
-`marionette_mcp` (LeanCode): el agente toca, escribe y captura la app en
-ejecución. `MarionetteBinding.ensureInitialized()` solo en `kDebugMode`.
+```bash
+flutter pub add marionette_flutter          # en la app
+dart pub global activate marionette_mcp     # una vez
+claude mcp add --transport stdio marionette -- marionette_mcp
+```
+`if (kDebugMode) MarionetteBinding.ensureInitialized();` en `main.dart`, luego
+`flutter run` y dale al agente el URI `ws://…/ws`. Herramientas: `get_interactive_elements`
+· `tap` · `enter_text` · `scroll_to` · `take_screenshots` · `get_logs` · `hot_reload`.
+Skill: `dart run skills@ add https://github.com/leancodepl/marionette_mcp`.
+
+Patrol MCP (`dart pub add --dev patrol_mcp`): corre tests E2E escritos con
+Patrol, incluidos diálogos nativos. Ideal para CI.
 
 ## 7. Antes del merge (el ingeniero audita)
 

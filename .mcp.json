@@ -2,12 +2,26 @@
   "mcpServers": {
     "dart": {
       "command": "dart",
-      "args": ["mcp-server", "--enable=run_tests,dart_format,dart_fix,launch_app,list_devices,list_running_apps,get_app_logs,stop_app"]
+      "args": [
+        "mcp-server",
+        "--enable=run_tests,dart_format,dart_fix,launch_app,list_devices,list_running_apps,get_app_logs,stop_app"
+      ]
     },
     "stitch": {
       "type": "http",
       "url": "https://stitch.googleapis.com/mcp",
-      "headers": { "X-Goog-Api-Key": "${STITCH_API_KEY}" }
+      "headers": {
+        "X-Goog-Api-Key": "${STITCH_API_KEY}"
+      }
+    },
+    "marionette": {
+      "command": "dart",
+      "args": [
+        "pub",
+        "global",
+        "run",
+        "marionette_mcp"
+      ]
     }
   }
 }

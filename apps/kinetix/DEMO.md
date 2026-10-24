@@ -45,8 +45,14 @@ Mientras trabaja, señala en pantalla:
 
 ## 4. Verificación cerrada (5 min)
 
-- `hot_reload` vía MCP → en el simulador aparece el ♥ en el app bar. Toca ♥ en
-  2 productos y abre Favoritos.
+- `hot_reload` vía MCP → en el simulador aparece el ♥ en el app bar.
+- **Marionette** (el agente usa la app): copia el URI del VM service que imprime
+  `flutter run` (`http://…/` → `ws://…/ws`) y pide:
+  > Conéctate con marionette a ws://… , toca el corazón de los dos primeros
+  > productos, abre Favoritos y haz una captura.
+  El agente lista los elementos, toca, navega y te devuelve la captura.
+  Hallazgo real para señalar: los botones ♥ de las tarjetas miden 37×37 y el
+  selector de idioma 35×32, por debajo de los 48 dp de `team-a11y-inclusion.md`.
 - `run_tests` vía MCP. **Momento probable**: el widget test de la pantalla
   descubre un overflow en `KinetixProductCard` con tarjetas estrechas (bug real
   de la app). El agente usa `flutter-fix-layout-issues` y lo arregla. *"El test
@@ -65,6 +71,7 @@ hardcodeado en `KinetixProductCard`). *"La IA hace el borrador; el merge es mío
 
 | Si… | Haz… |
 |---|---|
+| Marionette no conecta | Revisa que el URI termine en `/ws` y que la app sea debug; si no, tócalo tú en el simulador |
 | El modelo tarda o se va por las ramas | `git stash && git checkout step-1-domain` (o `step-2-ui`, `final`) y luego `flutter pub get` (regenera los textos l10n); explica el diff |
 | No hay red | Muestra `final`: `flutter run`, previews y `flutter test` funcionan offline |
 | El simulador no arranca | `flutter test` + `flutter widget-preview start` |

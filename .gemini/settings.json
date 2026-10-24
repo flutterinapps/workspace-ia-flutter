@@ -1,11 +1,34 @@
 {
-  "context": { "fileName": ["GEMINI.md"] },
+  "context": {
+    "fileName": [
+      "GEMINI.md"
+    ]
+  },
   "mcpServers": {
-    "dart": { "command": "dart", "args": ["mcp-server", "--enable=run_tests,dart_format,dart_fix,launch_app,list_devices,list_running_apps,get_app_logs,stop_app"] },
-    "figma": { "httpUrl": "https://mcp.figma.com/mcp" },
+    "dart": {
+      "command": "dart",
+      "args": [
+        "mcp-server",
+        "--enable=run_tests,dart_format,dart_fix,launch_app,list_devices,list_running_apps,get_app_logs,stop_app"
+      ]
+    },
+    "figma": {
+      "httpUrl": "https://mcp.figma.com/mcp"
+    },
     "stitch": {
       "httpUrl": "https://stitch.googleapis.com/mcp",
-      "headers": { "X-Goog-Api-Key": "$STITCH_API_KEY" }
+      "headers": {
+        "X-Goog-Api-Key": "$STITCH_API_KEY"
+      }
+    },
+    "marionette": {
+      "command": "dart",
+      "args": [
+        "pub",
+        "global",
+        "run",
+        "marionette_mcp"
+      ]
     }
   }
 }

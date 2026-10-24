@@ -31,6 +31,7 @@ Requisitos: Flutter 3.38+ (Dart ≥ 3.9 para el Dart MCP server). Opcional:
 | Package skills | Igual, instaladas con `package:skills` | `.agents/skills/` + `.config/dart_skills/` |
 | Agentes especializados | Al invocarlos, en contexto aislado | `.agents/agents/` |
 | Dart & Flutter MCP | Sus herramientas, al iniciar | `.mcp.json` y equivalentes |
+| Marionette MCP | Sus herramientas, al iniciar (maneja la app corriendo) | idem + `marionette_flutter` en la app |
 | MCP de diseño (Figma, Stitch) | Sus herramientas, al iniciar | idem |
 | Guardarraíles | No es contexto: se ejecutan | `tool/hooks/`, `analysis_options.yaml` |
 | Índice | Siempre (es pequeño) | `WORKSPACE_INDEX.md` |
@@ -52,6 +53,11 @@ usarse.
 
 Las carpetas por agente son **enlaces** a `.agents/` (los crea `tool/setup_ai.sh`):
 una sola fuente de verdad.
+
+## Probar con agentes
+
+Cuatro carriles (desarrollo, exploración con Marionette, regresión con Patrol,
+certificación de caja negra): ver [`docs/ai/testing-lanes.md`](docs/ai/testing-lanes.md).
 
 ## Flujo de una feature
 

@@ -15,6 +15,7 @@ dependencies:
   google_fonts: ^6.2.1
   intl: ^0.20.2
   equatable: ^2.1.0
+  marionette_flutter: ^0.7.0
 
 dev_dependencies:
   flutter_test:

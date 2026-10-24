@@ -18,6 +18,7 @@ case "${1:-}" in
 esac
 
 official_repo="https://github.com/flutter/agent-plugins"
+marionette_repo="https://github.com/leancodepl/marionette_mcp"
 
 # Skills oficiales que no queremos (CLI, FFI...). Ver .agents/skills-exclude.txt.
 remove_excluded_skills() {
@@ -58,20 +59,24 @@ link .github/skills  ../.agents/skills
 
 say "3/4 Skills oficiales (flutter/agent-plugins: Flutter + Dart)"
 if $update; then
-  dart run skills@ get --git "$official_repo" --agent generic --all >/dev/null
+  dart run skills@ get --agent generic --all >/dev/null
   remove_excluded_skills
   if [[ -z "$(git status --porcelain -- .agents/skills)" ]]; then
     echo "  Sin cambios: las skills oficiales ya están al día."
   else
-    echo "  Cambios de Flutter en las skills (revísalos antes del commit):"
+    echo "  Cambios en las skills oficiales (revísalos antes del commit):"
     git status --short -- .agents/skills
   fi
 elif [[ ! -d .agents/skills/flutter-add-widget-preview ]]; then
   dart run skills@ add "$official_repo" --agent generic --all >/dev/null
+  dart run skills@ add "$marionette_repo" --agent generic --all >/dev/null
   remove_excluded_skills
 else
   echo "  ya instaladas ($(ls .agents/skills | wc -l | tr -d ' ') skills; usa --update para actualizar las oficiales)"
 fi
+
+echo "  marionette_mcp (el agente maneja la app corriendo)"
+dart pub global activate marionette_mcp >/dev/null
 
 say "4/4 Dependencias de las apps"
 for pubspec in apps/*/pubspec.yaml; do
@@ -86,5 +91,5 @@ cat <<MSG
 Listo. Abre tu agente en: $root
   claude   |  gemini   |  agy   |  codex
 Pregúntale: "¿Qué reglas, skills, agentes y herramientas MCP tienes cargados?"
-Stitch necesita la variable STITCH_API_KEY; Figma pide login la primera vez.
+Stitch necesita la variable STITCH_API_KEY; Figma pide login la primera vez.\nPara que el agente maneje la app: flutter run y pásale el URI del VM service.
 MSG

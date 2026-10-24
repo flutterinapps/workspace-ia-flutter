@@ -80,7 +80,12 @@ Desde la raíz: `tool/setup_ai.sh` (prepara agentes), `tool/new_app.sh <nombre>`
 - `dart` (Dart & Flutter MCP): `analyze_files`, `run_tests`, `dart_format`,
   `dart_fix`, `hot_reload`, `get_runtime_errors`, `widget_inspector`, `pub`,
   `pub_dev_search`. Úsalas antes que la terminal.
+- `marionette`: manejar la app corriendo como una persona (tocar, escribir,
+  hacer scroll, capturar pantalla, leer logs). Requiere `flutter run` y el URI
+  del VM service. Ver skill `marionette-flutter-drive-app`.
 - `figma` y `stitch`: leer diseños; ver skill `design-to-flutter`.
+
+Qué herramienta usar para probar qué: `docs/ai/testing-lanes.md`.
 
 ## Idioma
 

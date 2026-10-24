@@ -1,5 +1,7 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:marionette_flutter/marionette_flutter.dart';
 import 'package:provider/provider.dart';
 
 import 'core/theme/app_theme.dart';
@@ -22,6 +24,13 @@ import 'presentation/screens/payment_processing_screen.dart';
 import 'presentation/screens/order_confirmation_screen.dart';
 
 void main() {
+  // Lets AI agents drive the running app through marionette_mcp. Debug only:
+  // release builds keep the default binding.
+  if (kDebugMode) {
+    MarionetteBinding.ensureInitialized();
+  } else {
+    WidgetsFlutterBinding.ensureInitialized();
+  }
   runApp(const KinetixApp());
 }
 
