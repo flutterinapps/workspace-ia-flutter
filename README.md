@@ -109,7 +109,7 @@ Elige la ruta según los créditos de IA que tengas:
 |---|---|---|
 | **Con créditos: Vistos recientemente** | `/new-feature kinetix recently-viewed` | `recently-viewed-step-1` (spec, contrato y datos) → `recently-viewed-step-2` (estado, provider, fila en el catálogo) → `recently-viewed-final` (previews EN/ES y tests) |
 | **Con pocos créditos: Ordenar por precio** | `/new-feature kinetix sort-by-price` | `sort-by-price` (spec, orden en el catálogo y tests) |
-| **Ejemplo para auditar: Wishlist** | Pide al agente que revise la rama `final` | `step-1-domain` → `step-2-ui` → `final` (tiene errores a propósito que la IA encuentra) |
+| **Ejemplo para auditar: Wishlist** | Pide al agente que revise la rama `final` | `step-1-domain` → `step-2-ui` → `final` (tiene errores reales que la IA encontró al revisarla) |
 
 `main` (= `step-0-workspace`) es el punto de partida: el workspace y Kinetix sin
 ninguna de estas funciones. Si te quedas atrás: `git checkout <rama>` y

@@ -44,8 +44,8 @@ Elige la ruta según los créditos de IA:
   Plan B: rama `sort-by-price`.
 
 El agente `flutter-architect` escribe la spec en `docs/ai/specs/`.
-Si la IA menciona la rama `final`: ahí está la Wishlist, un ejemplo con errores a
-propósito. Es un buen momento para mostrar que la IA audita código existente.
+Si la IA menciona la rama `final`: ahí está la Wishlist, un ejemplo con errores reales que
+la IA encontró al revisarla. Es un buen momento para mostrar que la IA audita código existente.
 Léela en voz alta 20 segundos: estados, contrato, casos borde, criterios.
 Apruébala: *"Aprobada, sigue."*
 
