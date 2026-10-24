@@ -1,8 +1,9 @@
 # Espacio de trabajo IA Flutter
 
-Monorepo de apps Flutter preparado para trabajar con agentes de IA (Claude Code,
-Gemini CLI, Antigravity, Codex, Cursor, Copilot). Este archivo es la **fuente
-única de reglas**; `CLAUDE.md` y `GEMINI.md` solo lo importan.
+Una carpeta, guardada en git, que envuelve proyectos Flutter y le enseña a la IA
+cómo trabajamos (Claude Code, Gemini CLI, Antigravity, Codex, Cursor, Copilot).
+No es un monorepo: cada app de `apps/` puede tener su propio repositorio. Este
+archivo es la **fuente única de reglas**; `CLAUDE.md` y `GEMINI.md` solo lo importan.
 
 ## Mapa
 
