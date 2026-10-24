@@ -1,5 +1,6 @@
 ---
-trigger: always_on
+trigger: model_decision
+description: Usar al crear archivos o carpetas nuevas, o al decidir dónde va el código y cómo gestionar el estado o los paquetes.
 ---
 
 ## Flutter style guide

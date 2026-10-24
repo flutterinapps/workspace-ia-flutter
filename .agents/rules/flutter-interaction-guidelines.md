@@ -1,5 +1,6 @@
 ---
-trigger: always_on
+trigger: model_decision
+description: Usar al explicar código o decisiones a la persona, o al sugerir dependencias, formateo y linting.
 ---
 
 # AI rules for Flutter
