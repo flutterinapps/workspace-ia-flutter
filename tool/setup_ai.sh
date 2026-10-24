@@ -19,19 +19,17 @@ esac
 
 official_repo="https://github.com/flutter/agent-plugins"
 
-# Las skills oficiales que usamos están registradas en
-# .config/dart_skills/skills_config.json. Instalar o actualizar solo esas
-# evita que vuelvan las que quitamos a propósito.
-official_skills() {
-  python3 - "$official_repo" <<'PY'
-import json, sys
-config = json.load(open(".config/dart_skills/skills_config.json"))
-skills = config["installations"]["generic"][sys.argv[1]]["skills"]
-print("\n".join(skill["name"] for skill in skills))
-PY
+# Skills oficiales que no queremos (CLI, FFI...). Ver .agents/skills-exclude.txt.
+remove_excluded_skills() {
+  local args=()
+  while IFS= read -r skill; do
+    [[ -z "$skill" || "$skill" == \#* ]] && continue
+    [[ -d ".agents/skills/$skill" ]] && args+=(-s "$skill")
+  done < .agents/skills-exclude.txt
+  if (( ${#args[@]} > 0 )); then
+    dart run skills@ remove --agent generic --git "$official_repo" "${args[@]}" >/dev/null
+  fi
 }
-
-say() { printf '\033[1m%s\033[0m\n' "$*"; }
 
 say "1/4 Requisitos"
 command -v flutter >/dev/null || { echo "Falta Flutter: https://docs.flutter.dev/get-started"; exit 1; }
@@ -59,21 +57,20 @@ link .cursor/skills  ../.agents/skills
 link .github/skills  ../.agents/skills
 
 say "3/4 Skills oficiales (flutter/agent-plugins: Flutter + Dart)"
-skill_args=()
-while IFS= read -r skill; do skill_args+=(-s "$skill"); done < <(official_skills)
-
 if $update; then
-  dart run skills@ get --git "$official_repo" --agent generic "${skill_args[@]}"
-  if git diff --quiet -- .agents/skills; then
+  dart run skills@ get --git "$official_repo" --agent generic --all >/dev/null
+  remove_excluded_skills
+  if [[ -z "$(git status --porcelain -- .agents/skills)" ]]; then
     echo "  Sin cambios: las skills oficiales ya están al día."
   else
     echo "  Cambios de Flutter en las skills (revísalos antes del commit):"
-    git diff --stat -- .agents/skills
+    git status --short -- .agents/skills
   fi
 elif [[ ! -d .agents/skills/flutter-add-widget-preview ]]; then
-  dart run skills@ add "$official_repo" --agent generic "${skill_args[@]}"
+  dart run skills@ add "$official_repo" --agent generic --all >/dev/null
+  remove_excluded_skills
 else
-  echo "  ya instaladas ($(( ${#skill_args[@]} / 2 )) oficiales; usa --update para actualizarlas)"
+  echo "  ya instaladas ($(ls .agents/skills | wc -l | tr -d ' ') skills; usa --update para actualizar las oficiales)"
 fi
 
 say "4/4 Dependencias de las apps"
