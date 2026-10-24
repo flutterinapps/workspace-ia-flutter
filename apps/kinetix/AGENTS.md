@@ -31,6 +31,7 @@ están en el `AGENTS.md` raíz y en `.agents/rules/`; aquí solo lo propio.
 | Detalle de producto con tallas | hecho | `product_detail_screen.dart` |
 | Carrito + cupones | hecho | `cart_provider.dart`, `shopping_cart_screen.dart` |
 | Checkout (Apple/Google Pay, tarjeta) | hecho | `checkout_provider.dart`, `checkout_payment_screen.dart` |
+| Vistos recientemente (fila en el catálogo, estados sellados) | hecho | `recently_viewed_provider.dart`, `kinetix_recently_viewed_section.dart`, spec `docs/ai/specs/kinetix-recently-viewed.md` |
 | Wishlist | **pendiente**: hay `WishlistProvider` en memoria, sin pantalla, repositorio ni estados | spec: `docs/ai/specs/kinetix-wishlist.md` |
 
 ## Deuda conocida

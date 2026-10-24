@@ -10,12 +10,14 @@ import 'data/repositories_impl/product_repository_impl.dart';
 import 'data/repositories_impl/cart_repository_impl.dart';
 import 'data/repositories_impl/payment_repository_impl.dart';
 import 'data/repositories_impl/order_repository_impl.dart';
+import 'data/repositories_impl/recently_viewed_repository_impl.dart';
 
 import 'presentation/providers/catalog_provider.dart';
 import 'presentation/providers/cart_provider.dart';
 import 'presentation/providers/wishlist_provider.dart';
 import 'presentation/providers/checkout_provider.dart';
 import 'presentation/providers/locale_provider.dart';
+import 'presentation/providers/recently_viewed_provider.dart';
 
 import 'presentation/screens/catalog_home_screen.dart';
 import 'presentation/screens/shopping_cart_screen.dart';
@@ -44,6 +46,7 @@ class KinetixApp extends StatelessWidget {
     final cartRepo = CartRepositoryImpl();
     final paymentRepo = PaymentRepositoryImpl();
     final orderRepo = OrderRepositoryImpl();
+    final recentlyViewedRepo = RecentlyViewedRepositoryImpl();
 
     return MultiProvider(
       providers: [
@@ -51,6 +54,9 @@ class KinetixApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => CatalogProvider(productRepo)),
         ChangeNotifierProvider(create: (_) => CartProvider(cartRepo)),
         ChangeNotifierProvider(create: (_) => WishlistProvider()),
+        ChangeNotifierProvider(
+          create: (_) => RecentlyViewedProvider(recentlyViewedRepo),
+        ),
         ChangeNotifierProvider(
           create: (_) => CheckoutProvider(paymentRepo, orderRepo),
         ),

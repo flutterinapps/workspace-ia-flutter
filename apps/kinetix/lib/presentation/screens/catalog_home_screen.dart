@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../providers/catalog_provider.dart';
+import '../providers/recently_viewed_provider.dart';
 import '../providers/wishlist_provider.dart';
 import '../../l10n/generated/app_localizations.dart';
 import '../../core/theme/app_colors.dart';
 import '../../core/theme/app_typography.dart';
 import '../../domain/enums/product_category.dart';
+import '../../domain/models/product.dart';
 import '../widgets/kinetix_app_bar.dart';
 import '../widgets/kinetix_product_card.dart';
 import '../widgets/kinetix_category_chip.dart';
+import '../widgets/kinetix_recently_viewed_section.dart';
 import '../widgets/kinetix_text_field.dart';
 import 'product_detail_screen.dart';
 import 'shopping_cart_screen.dart';
@@ -21,6 +24,15 @@ class CatalogHomeScreen extends StatelessWidget {
     final loc = AppLocalizations.of(context);
     final catalogProvider = context.watch<CatalogProvider>();
     final wishlistProvider = context.watch<WishlistProvider>();
+    final recentlyViewed = context.watch<RecentlyViewedProvider>();
+
+    void openProduct(Product product) {
+      catalogProvider.selectProduct(product);
+      context.read<RecentlyViewedProvider>().add(product);
+      Navigator.of(context).push(
+        MaterialPageRoute(builder: (context) => const ProductDetailScreen()),
+      );
+    }
 
     return Scaffold(
       backgroundColor: AppColors.surface,
@@ -84,6 +96,13 @@ class CatalogHomeScreen extends StatelessWidget {
             ),
           ),
           const SliverToBoxAdapter(child: SizedBox(height: 16)),
+          SliverToBoxAdapter(
+            child: KinetixRecentlyViewedSection(
+              state: recentlyViewed.state,
+              onOpenProduct: openProduct,
+              onRetry: recentlyViewed.load,
+            ),
+          ),
           // Product Grid Section Title
           SliverToBoxAdapter(
             child: Padding(
@@ -131,14 +150,7 @@ class CatalogHomeScreen extends StatelessWidget {
                       isFavorite: wishlistProvider.isFavorite(product.id),
                       onFavoriteToggle: () =>
                           wishlistProvider.toggleFavorite(product),
-                      onTap: () {
-                        catalogProvider.selectProduct(product);
-                        Navigator.of(context).push(
-                          MaterialPageRoute(
-                            builder: (context) => const ProductDetailScreen(),
-                          ),
-                        );
-                      },
+                      onTap: () => openProduct(product),
                     );
                   },
                   childCount: catalogProvider.products.length,

@@ -6,6 +6,7 @@ Antes de crear un widget, busca aquí. Si creas uno nuevo, añádelo a la tabla.
 |---|---|---|
 | Card neumórfica (raised / inset) | `KinetixCard` | `lib/presentation/widgets/kinetix_card.dart` |
 | Card de producto | `KinetixProductCard` | `lib/presentation/widgets/kinetix_product_card.dart` |
+| Card de producto compacta (filas horizontales) | `KinetixMiniProductCard` | `lib/presentation/widgets/kinetix_mini_product_card.dart` |
 | Botón primario / secundario / glass | `KinetixButton` | `lib/presentation/widgets/kinetix_button.dart` |
 | Input neumórfico (sunken) | `KinetixTextField` | `lib/presentation/widgets/kinetix_text_field.dart` |
 | Chip de categoría | `KinetixCategoryChip` | `lib/presentation/widgets/kinetix_category_chip.dart` |
