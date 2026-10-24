@@ -1,4 +1,4 @@
-# Guion de la demo — Kinetix · Wishlist (15:32–15:50)
+# Guion de la demo — Kinetix
 
 Rama de partida: `main` (= `step-0-workspace`). Simulador iOS abierto y
 `flutter run` corriendo en `apps/kinetix` **antes** de empezar.
@@ -32,9 +32,20 @@ espacio de trabajo."*
 
 ## 2. Spec antes que código (3 min)
 
-> /new-feature kinetix wishlist "pantalla de favoritos con estados loading, vacío, datos y error"
+Elige la ruta según los créditos de IA:
 
-El agente `flutter-architect` escribe `docs/ai/specs/kinetix-wishlist.md`.
+- **Con créditos — Vistos recientemente** (flujo completo):
+  > /new-feature kinetix recently-viewed "fila de productos vistos recientemente en el catálogo: guarda los últimos productos que el usuario abrió y los muestra arriba, con estados de cargando, vacío, datos y error"
+
+  Plan B: ramas `recently-viewed-step-1` → `recently-viewed-step-2` → `recently-viewed-final`.
+- **Con pocos créditos — Ordenar por precio** (cambio pequeño):
+  > /new-feature kinetix sort-by-price "ordenar el catálogo por precio: relevancia, menor a mayor y mayor a menor"
+
+  Plan B: rama `sort-by-price`.
+
+El agente `flutter-architect` escribe la spec en `docs/ai/specs/`.
+Si la IA menciona la rama `final`: ahí está la Wishlist, un ejemplo con errores a
+propósito. Es un buen momento para mostrar que la IA audita código existente.
 Léela en voz alta 20 segundos: estados, contrato, casos borde, criterios.
 Apruébala: *"Aprobada, sigue."*
 
@@ -75,7 +86,7 @@ hardcodeado en `KinetixProductCard`). *"La IA hace el borrador; el merge es mío
 | Si… | Haz… |
 |---|---|
 | Marionette no conecta | Revisa que el URI termine en `/ws` y que la app sea debug; si no, tócalo tú en el simulador |
-| El modelo tarda o se va por las ramas | `git stash && git checkout step-1-domain` (o `step-2-ui`, `final`) y luego `flutter pub get` (regenera los textos l10n); explica el diff |
+| El modelo tarda o se va por las ramas | `git stash && git checkout recently-viewed-step-1` (o `-step-2`, `-final`; o `sort-by-price`) y luego `flutter pub get` (regenera los textos l10n); explica el diff |
 | No hay red | Muestra `final`: `flutter run`, previews y `flutter test` funcionan offline |
 | El simulador no arranca | `flutter test` + `flutter widget-preview start` |
 | Falla el MCP | Los mismos pasos con `flutter analyze` y `flutter test` en la terminal |
