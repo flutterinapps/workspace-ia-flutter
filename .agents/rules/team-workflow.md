@@ -22,6 +22,8 @@ trigger: always_on
 - Cada widget nuevo tiene `@Preview` (claro/oscuro) y widget test.
 - Cada provider nuevo tiene unit tests con `package:checks` para todos sus estados.
 - Textos visibles en `l10n` (EN y ES), nunca literales en el código.
+- Cambios en pantalla o funcionalidad que se pueda recorrer: ofrece probarlos en el
+  simulador con `marionette` y decide la persona. Si no se probó, dilo en el resumen.
 - Resumen final: archivos creados/modificados y cómo probarlo.
 
 ## Commits
