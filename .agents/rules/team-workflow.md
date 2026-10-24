@@ -24,6 +24,20 @@ trigger: always_on
 - Textos visibles en `l10n` (EN y ES), nunca literales en el código.
 - Resumen final: archivos creados/modificados y cómo probarlo.
 
+## Commits
+
+Siguen [Conventional Commits 1.0.0](https://www.conventionalcommits.org/es/v1.0.0/):
+`<tipo>(<alcance opcional>): <descripción>`, en inglés, en imperativo y sin punto final.
+
+- Tipos: `feat` (función nueva), `fix` (corrección), `docs`, `refactor`, `test`,
+  `perf`, `style`, `build`, `ci`, `chore`.
+- Alcance: la app o la parte del workspace, p. ej. `feat(kinetix): add wishlist screen`,
+  `docs(rules): explain every rule`.
+- Cambio que rompe compatibilidad: `!` tras el tipo (`feat(kinetix)!: …`) o un pie
+  `BREAKING CHANGE: …`.
+- Un commit por cambio lógico. Si la app define otro idioma o formato en su
+  `AGENTS.md`, manda la app.
+
 ## Límites
 
 - No añadir dependencias sin decir por qué.

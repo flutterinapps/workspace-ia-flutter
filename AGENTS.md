@@ -100,4 +100,5 @@ Qué herramienta usar para probar qué: `docs/ai/testing-lanes.md`.
 
 ## Idioma
 
-Responde en español. Código, identificadores y commits en inglés.
+Responde en español. Código, identificadores y commits en inglés; los commits siguen
+Conventional Commits (ver `team-workflow.md`).
