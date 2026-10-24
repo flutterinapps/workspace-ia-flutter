@@ -119,6 +119,7 @@ certificación de caja negra): ver [`docs/ai/testing-lanes.md`](docs/ai/testing-
 
 ## Adaptarlo y saber de dónde viene cada cosa
 
+- [Cómo funciona por dentro (arnés, bucle del agente)](docs/ai/como-funciona.md)
 - [Adaptar y mejorar el workspace](docs/ai/adaptar-el-workspace.md)
 - [De dónde viene cada recurso](docs/ai/origen-de-los-recursos.md)
 
