@@ -10,7 +10,7 @@ Cursor y GitHub Copilot.
 ## Empezar (2 minutos)
 
 ```bash
-git clone <este-repo> && cd workspace-ia-flutter
+git clone https://github.com/flutterinapps/workspace-ia-flutter && cd workspace-ia-flutter
 tool/setup_ai.sh          # enlaces por agente, skills oficiales, pub get
 claude                    # o: gemini · agy · codex · code . (Copilot) · cursor .
 ```
