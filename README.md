@@ -44,7 +44,7 @@ usarse.
 |---|---|---|---|---|
 | Claude Code | `CLAUDE.md` → `@AGENTS.md` | `.claude/skills` → `.agents/skills` | `.claude/agents` | `.mcp.json` |
 | Gemini CLI | `GEMINI.md` → `@AGENTS.md` | `.gemini/skills` | `.gemini/agents` | `.gemini/settings.json` |
-| Antigravity | `.agent/rules` → `.agents/rules` | `.agents/skills` | — | `.agents/mcp_config.json` |
+| Antigravity | `.agent/rules` → `.agents/rules` | `.agents/skills` | — | Plugin "Dart and Flutter" (Settings → Customizations) |
 | Codex | `AGENTS.md` | `.agents/skills` | — | `~/.codex/config.toml` |
 | Cursor | `.cursor/rules/*.mdc` | `.cursor/skills` | — | `.cursor/mcp.json` |
 | Copilot | `.github/copilot-instructions.md` | `.github/skills` | — | `.vscode/mcp.json` |
