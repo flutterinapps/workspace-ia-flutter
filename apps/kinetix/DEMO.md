@@ -65,7 +65,7 @@ hardcodeado en `KinetixProductCard`). *"La IA hace el borrador; el merge es mío
 
 | Si… | Haz… |
 |---|---|
-| El modelo tarda o se va por las ramas | `git stash && git checkout step-1-domain` (o `step-2-ui`, `final`) y explica el diff |
+| El modelo tarda o se va por las ramas | `git stash && git checkout step-1-domain` (o `step-2-ui`, `final`) y luego `flutter pub get` (regenera los textos l10n); explica el diff |
 | No hay red | Muestra `final`: `flutter run`, previews y `flutter test` funcionan offline |
 | El simulador no arranca | `flutter test` + `flutter widget-preview start` |
 | Falla el MCP | Los mismos pasos con `flutter analyze` y `flutter test` en la terminal |
