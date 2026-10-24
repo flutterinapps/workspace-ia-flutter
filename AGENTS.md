@@ -77,7 +77,7 @@ flutter run                     # simulador iOS o emulador Android
 flutter widget-preview start    # previews de widgets
 ```
 
-Desde la raíz: `tool/setup_ai.sh` (prepara agentes), `tool/new_app.sh <nombre>`
+Desde la raíz: `tool/setup_ai.sh` (prepara agentes; en PowerShell, `tool/setup_ai.ps1`), `tool/new_app.sh <nombre>`
 (app nueva), `tool/index_apps.sh` (regenera el índice).
 
 ## Herramientas (MCP)

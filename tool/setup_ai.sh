@@ -3,6 +3,9 @@
 # (.agents/) en las carpetas que lee cada herramienta, instala las skills
 # oficiales y resuelve dependencias de cada app.
 #
+# Funciona en macOS, Linux y Windows (Git Bash o WSL). En PowerShell usa
+# tool/setup_ai.ps1.
+#
 # Uso: tool/setup_ai.sh            prepara el workspace
 #      tool/setup_ai.sh --update   además trae la última versión de las skills
 #                                  oficiales y muestra qué cambió
@@ -20,6 +23,12 @@ esac
 official_repo="https://github.com/flutter/agent-plugins"
 marionette_repo="https://github.com/leancodepl/marionette_mcp"
 
+step() { printf '\033[1m%s\033[0m\n' "$*"; }
+
+is_windows() {
+  case "$(uname -s)" in MINGW* | MSYS* | CYGWIN*) return 0 ;; *) return 1 ;; esac
+}
+
 # Skills oficiales que no queremos (CLI, FFI...). Ver .agents/skills-exclude.txt.
 remove_excluded_skills() {
   local args=()
@@ -32,32 +41,55 @@ remove_excluded_skills() {
   fi
 }
 
-say "1/4 Requisitos"
+step "1/4 Requisitos"
 command -v flutter >/dev/null || { echo "Falta Flutter: https://docs.flutter.dev/get-started"; exit 1; }
 dart_version="$(dart --version 2>&1 | sed -E 's/.*version: ([0-9]+\.[0-9]+).*/\1/')"
-echo "Dart $dart_version"
+echo "  Dart $dart_version"
 awk -v v="$dart_version" 'BEGIN { split(v, a, "."); exit !(a[1] > 3 || (a[1] == 3 && a[2] >= 9)) }' \
   || { echo "El Dart MCP server necesita Dart >= 3.9"; exit 1; }
 
-say "2/4 Enlaces a la fuente única (.agents/)"
-link() { # link <destino> <origen relativo al destino>
-  mkdir -p "$(dirname "$1")"
-  if [[ -L "$1" || ! -e "$1" ]]; then
-    ln -sfn "$2" "$1" && echo "  $1 -> $2"
+step "2/4 Enlaces a la fuente única (.agents/)"
+# Cada herramienta busca sus reglas, skills y agentes en su propia carpeta.
+# Esas carpetas apuntan a .agents/ para que haya una sola fuente de verdad.
+#   macOS / Linux / WSL: enlace simbólico.
+#   Windows (Git Bash): unión de directorios (no pide permisos de administrador).
+# Si el repo se clonó en Windows sin soporte de enlaces, git deja en su lugar
+# un archivo de texto con la ruta: se reemplaza por el enlace real.
+link() { # link <destino> <origen relativo a la carpeta del destino>
+  local dest="$1" target="$2"
+  mkdir -p "$(dirname "$dest")"
+  if [[ -f "$dest" && ! -L "$dest" ]]; then
+    rm -f "$dest"
+  fi
+  if [[ -e "$dest" && ! -L "$dest" ]]; then
+    if is_windows && [[ -d "$dest" ]] && cmd //c "fsutil reparsepoint query \"$(cygpath -w "$dest")\"" >/dev/null 2>&1; then
+      echo "  $dest -> $target (unión existente)"
+    else
+      echo "  $dest ya existe y es una carpeta real: lo dejo como está"
+    fi
+    return
+  fi
+  if is_windows; then
+    local abs_target
+    abs_target="$(cd "$(dirname "$dest")" && cd "$target" && pwd)"
+    rm -f "$dest"
+    cmd //c "mklink /J \"$(cygpath -w "$dest")\" \"$(cygpath -w "$abs_target")\"" >/dev/null
+    echo "  $dest -> $target (unión de Windows)"
   else
-    echo "  $1 ya existe y no es un enlace: lo dejo como está"
+    ln -sfn "$target" "$dest"
+    echo "  $dest -> $target"
   fi
 }
-link .claude/skills  ../.agents/skills
-link .claude/agents  ../.agents/agents
-link .gemini/agents  ../.agents/agents
-link .gemini/skills  ../.agents/skills
-link .agent/rules    ../.agents/rules
+link .claude/skills   ../.agents/skills
+link .claude/agents   ../.agents/agents
+link .gemini/agents   ../.agents/agents
+link .gemini/skills   ../.agents/skills
+link .agent/rules     ../.agents/rules
 link .agent/workflows ../.agents/workflows
-link .cursor/skills  ../.agents/skills
-link .github/skills  ../.agents/skills
+link .cursor/skills   ../.agents/skills
+link .github/skills   ../.agents/skills
 
-say "3/4 Skills oficiales (flutter/agent-plugins: Flutter + Dart)"
+step "3/4 Skills oficiales (Flutter, Dart y Marionette)"
 if $update; then
   dart run skills@ get --agent generic --all >/dev/null
   remove_excluded_skills
@@ -78,7 +110,7 @@ fi
 echo "  marionette_mcp (el agente maneja la app corriendo)"
 dart pub global activate marionette_mcp >/dev/null
 
-say "4/4 Dependencias de las apps"
+step "4/4 Dependencias de las apps"
 for pubspec in apps/*/pubspec.yaml; do
   app="$(dirname "$pubspec")"
   echo "  $app"

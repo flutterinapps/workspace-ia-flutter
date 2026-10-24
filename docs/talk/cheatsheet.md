@@ -12,6 +12,15 @@
 
 El plugin **no** carga reglas: cópialas a `AGENTS.md` / `CLAUDE.md` / `GEMINI.md`.
 
+## 1b. Clonar y preparar el workspace
+
+```bash
+git clone https://github.com/flutterinapps/workspace-ia-flutter
+cd workspace-ia-flutter
+./tool/setup_ai.sh        # macOS, Linux, WSL o Git Bash en Windows
+```
+PowerShell: `powershell -ExecutionPolicy Bypass -File tool\setup_ai.ps1`
+
 ## 2. Dart & Flutter MCP server (Dart ≥ 3.9)
 
 ```json

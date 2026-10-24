@@ -15,6 +15,12 @@ tool/setup_ai.sh          # enlaces por agente, skills oficiales, pub get
 claude                    # o: gemini · agy · codex · code . (Copilot) · cursor .
 ```
 
+**Windows:** si tienes Git instalado ya tienes **Git Bash**: ábrelo y usa los mismos
+comandos. Desde PowerShell:
+`powershell -ExecutionPolicy Bypass -File tool\setup_ai.ps1`. El script crea
+uniones de carpetas (no pide administrador) y repara los enlaces que Git para
+Windows deja como archivos de texto. También funciona en WSL.
+
 Primera pregunta al agente: *"¿Qué reglas, skills, agentes y herramientas MCP
 tienes cargados?"*
 

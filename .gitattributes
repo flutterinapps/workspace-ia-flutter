@@ -1,0 +1,7 @@
+# Los scripts de bash deben tener fin de línea LF también en Windows
+# (con CRLF, Git Bash falla con "bad interpreter" o "$'\r': command not found").
+*.sh   text eol=lf
+*.py   text eol=lf
+*.toml text eol=lf
+# Los scripts de PowerShell, con CRLF.
+*.ps1  text eol=crlf
