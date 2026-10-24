@@ -1,0 +1,17 @@
+.DS_Store
+.idea/
+*.iml
+
+# Flutter / Dart
+**/build/
+**/.dart_tool/
+**/.flutter-plugins-dependencies
+**/ios/Pods/
+**/coverage/
+
+# Secretos
+*.env.json
+.env
+
+# Ajustes personales de agentes
+**/.claude/settings.local.json

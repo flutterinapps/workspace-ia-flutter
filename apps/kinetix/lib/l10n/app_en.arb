@@ -1,0 +1,261 @@
+{
+  "@@locale": "en",
+
+  "appTitle": "Kinetix SportStore",
+  "@appTitle": {
+    "description": "Application name shown in the app bar"
+  },
+  "tagline": "High Performance & Tactile Luxury",
+  "@tagline": {
+    "description": "Brand tagline under the app bar on the catalog screen"
+  },
+  "searchPlaceholder": "Search footwear, apparel, equipment...",
+  "@searchPlaceholder": {
+    "description": "Hint text of the catalog search field"
+  },
+
+  "categories": "Categories",
+  "@categories": {
+    "description": "Section title for the category filters"
+  },
+  "catAll": "All",
+  "@catAll": {
+    "description": "Category filter: every product"
+  },
+  "catApparel": "Apparel",
+  "@catApparel": {
+    "description": "Category filter: clothing"
+  },
+  "catFootwear": "Footwear",
+  "@catFootwear": {
+    "description": "Category filter: shoes"
+  },
+  "catAccessories": "Accessories",
+  "@catAccessories": {
+    "description": "Category filter: accessories"
+  },
+  "catEquipment": "Equipment",
+  "@catEquipment": {
+    "description": "Category filter: training equipment"
+  },
+
+  "featured": "Featured Products",
+  "@featured": {
+    "description": "Section title of the featured products grid"
+  },
+  "noProductsFound": "No products found",
+  "@noProductsFound": {
+    "description": "Empty state shown when a search or filter returns nothing"
+  },
+  "productNotFound": "Product not found",
+  "@productNotFound": {
+    "description": "Error state shown when a product id cannot be resolved"
+  },
+
+  "addToCart": "Add to Cart",
+  "@addToCart": {
+    "description": "Primary call to action on the product detail screen"
+  },
+  "selectSize": "Select Size",
+  "@selectSize": {
+    "description": "Title of the size selector"
+  },
+  "size": "Size",
+  "@size": {
+    "description": "Label for the size attribute of a product"
+  },
+  "sizeGuide": "Size Guide",
+  "@sizeGuide": {
+    "description": "Link that opens the sizing chart"
+  },
+  "color": "Color",
+  "@color": {
+    "description": "Label for the color attribute of a product"
+  },
+  "quantity": "Quantity",
+  "@quantity": {
+    "description": "Label above the quantity picker"
+  },
+  "description": "Description",
+  "@description": {
+    "description": "Section title for the product description"
+  },
+
+  "cart": "Shopping Cart",
+  "@cart": {
+    "description": "Title of the shopping cart screen"
+  },
+  "items": "items",
+  "@items": {
+    "description": "Noun used next to the number of products in the cart"
+  },
+  "emptyCart": "Your cart is empty",
+  "@emptyCart": {
+    "description": "Empty state of the shopping cart"
+  },
+
+  "subtotal": "Subtotal",
+  "@subtotal": {
+    "description": "Order summary line: price before shipping and taxes"
+  },
+  "shipping": "Shipping",
+  "@shipping": {
+    "description": "Order summary line: shipping cost"
+  },
+  "freeShipping": "Free Shipping!",
+  "@freeShipping": {
+    "description": "Shown instead of the shipping cost when it is waived"
+  },
+  "tax": "Tax",
+  "@tax": {
+    "description": "Order summary line: taxes"
+  },
+  "discount": "Discount",
+  "@discount": {
+    "description": "Order summary line: coupon discount"
+  },
+  "total": "Total",
+  "@total": {
+    "description": "Order summary line: final amount"
+  },
+
+  "applyCoupon": "Apply Coupon",
+  "@applyCoupon": {
+    "description": "Button that validates the discount code"
+  },
+  "couponCode": "Discount code",
+  "@couponCode": {
+    "description": "Hint of the coupon input field"
+  },
+  "invalidCoupon": "Invalid discount code",
+  "@invalidCoupon": {
+    "description": "Error shown when the coupon is rejected"
+  },
+  "couponApplied": "Coupon applied!",
+  "@couponApplied": {
+    "description": "Confirmation shown when the coupon is accepted"
+  },
+
+  "proceedToCheckout": "Proceed to Checkout",
+  "@proceedToCheckout": {
+    "description": "Button that moves from the cart to the payment screen"
+  },
+  "checkout": "Secure Checkout",
+  "@checkout": {
+    "description": "Title of the payment screen"
+  },
+  "paymentMethod": "Payment Method",
+  "@paymentMethod": {
+    "description": "Section title of the payment method selector"
+  },
+  "applePay": "Apple Pay",
+  "@applePay": {
+    "description": "Apple Pay payment method"
+  },
+  "googlePay": "Google Pay",
+  "@googlePay": {
+    "description": "Google Pay payment method"
+  },
+  "payWith": "Pay with {method}",
+  "@payWith": {
+    "description": "Label of the native payment button",
+    "placeholders": {
+      "method": {
+        "type": "String",
+        "example": "Apple Pay"
+      }
+    }
+  },
+  "creditCard": "Credit / Debit Card",
+  "@creditCard": {
+    "description": "Card payment method"
+  },
+  "cardNumber": "Card Number",
+  "@cardNumber": {
+    "description": "Label of the card number field"
+  },
+  "expiry": "MM/YY",
+  "@expiry": {
+    "description": "Hint of the card expiration date field"
+  },
+  "cvv": "CVV",
+  "@cvv": {
+    "description": "Label of the card security code field"
+  },
+  "cardholderName": "Cardholder Name",
+  "@cardholderName": {
+    "description": "Label of the cardholder name field"
+  },
+
+  "shippingAddress": "Shipping Address",
+  "@shippingAddress": {
+    "description": "Section title of the shipping form"
+  },
+  "fullName": "Full Name",
+  "@fullName": {
+    "description": "Label of the customer name field"
+  },
+  "email": "Email Address",
+  "@email": {
+    "description": "Label of the email field"
+  },
+  "address": "Street Address",
+  "@address": {
+    "description": "Label of the street address field"
+  },
+  "city": "City",
+  "@city": {
+    "description": "Label of the city field"
+  },
+  "postalCode": "Postal Code",
+  "@postalCode": {
+    "description": "Label of the postal code field"
+  },
+
+  "payNow": "Pay Now",
+  "@payNow": {
+    "description": "Button that submits the payment"
+  },
+  "processingPayment": "Processing Secure Payment...",
+  "@processingPayment": {
+    "description": "Message shown while the payment is being processed"
+  },
+  "paymentFailed": "Payment failed",
+  "@paymentFailed": {
+    "description": "Generic error shown when the payment is rejected"
+  },
+
+  "orderConfirmed": "Order Confirmed!",
+  "@orderConfirmed": {
+    "description": "Title of the order confirmation screen"
+  },
+  "orderNumber": "Order Number",
+  "@orderNumber": {
+    "description": "Label of the order identifier"
+  },
+  "orderThankYou": "Thank you for your purchase at Kinetix. Confirmation details sent to your email.",
+  "@orderThankYou": {
+    "description": "Thank you message on the order confirmation screen"
+  },
+  "backToShop": "Back to Shop",
+  "@backToShop": {
+    "description": "Button that returns to the catalog"
+  },
+
+  "wishlist": "Wishlist",
+  "@wishlist": {
+    "description": "Title of the favorite products list"
+  },
+  "noFavorites": "No favorite products saved yet",
+  "@noFavorites": {
+    "description": "Empty state of the wishlist"
+  },
+  "newRelease": "NEW",
+  "@newRelease": {
+    "description": "Badge for recently released products"
+  },
+  "limitedEdition": "LIMITED EDITION",
+  "@limitedEdition": {
+    "description": "Badge for limited edition products"
+  }
+}

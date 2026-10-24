@@ -1,0 +1,19 @@
+{
+  "enabledPlugins": {
+    "dart-flutter@dart-flutter": false
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/tool/hooks/dart_check.sh",
+            "timeout": 90
+          }
+        ]
+      }
+    ]
+  }
+}

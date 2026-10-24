@@ -1,0 +1,11 @@
+{
+  "servers": {
+    "dart": { "type": "stdio", "command": "dart", "args": ["mcp-server", "--enable=run_tests,dart_format,dart_fix,launch_app,list_devices,list_running_apps,get_app_logs,stop_app"] },
+    "figma": { "type": "http", "url": "https://mcp.figma.com/mcp" },
+    "stitch": {
+      "type": "http",
+      "url": "https://stitch.googleapis.com/mcp",
+      "headers": { "X-Goog-Api-Key": "${env:STITCH_API_KEY}" }
+    }
+  }
+}

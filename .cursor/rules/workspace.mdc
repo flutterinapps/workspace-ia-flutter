@@ -1,0 +1,6 @@
+---
+description: Reglas del espacio de trabajo IA Flutter
+alwaysApply: true
+---
+Lee y sigue `AGENTS.md` en la raíz y las reglas "de siempre" que enumera en
+`.agents/rules/`. Skills en `.agents/skills/`, agentes en `.agents/agents/`.
